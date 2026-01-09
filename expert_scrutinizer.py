@@ -847,82 +847,70 @@ def _generate_blog_tags(content: str, persona_json: dict = None) -> str:
     """
     콘텐츠와 페르소나 기반으로 블로그 태그 추천 (2관점).
     
+    ⚠️ 주의: 이 함수는 LLM에게 가이드라인만 제공합니다.
+    실제 태그 생성은 LLM이 콘텐츠를 분석하여 자율적으로 수행해야 합니다.
+    
     Args:
         content: HTML 콘텐츠
         persona_json: 페르소나 정보
     
     Returns:
-        태그 추천 결과 (전문가용 + 초보자용)
+        태그 추천 가이드라인 및 프롬프트
     """
     soup = BeautifulSoup(content, 'html.parser')
-    text_content = soup.get_text().lower()
+    text_content = soup.get_text()
+    
+    # 텍스트 길이 및 복잡도 분석 (메타 정보만)
+    word_count = len(text_content)
     
     report = []
-    report.append("=== 🏷️  블로그 태그 추천 (Two-Perspective Tags) ===\n")
+    report.append("=== 🏷️  블로그 태그 추천 (LLM Auto-Generation) ===\n")
+    report.append(f"📊 콘텐츠 메타정보: {word_count}자\n")
     
-    # 페르소나 정보 추출
-    expertise = ""
-    if persona_json and isinstance(persona_json, dict):
-        expertise = persona_json.get('writer', {}).get('expertise', '')
-    
-    # 관점 1: 전문 지식 (알고리즘 인식 + 전문가 수요)
-    expert_tags = []
-    
-    # 키워드 기반 전문 태그 추천
-    keyword_mapping = {
-        '열역학': ['thermodynamics', '물리화학', 'physical_chemistry', '열역학_법칙', 'statistical_mechanics'],
-        '자유에너지': ['Gibbs_free_energy', 'Helmholtz_free_energy', '자발성_판단', 'spontaneity', 'thermodynamic_potentials'],
-        '맥스웰': ['Maxwell_relations', '편미분', 'partial_derivatives', '상태함수', 'state_functions'],
-        '상전이': ['phase_transition', 'phase_diagram', '클라우지우스', 'Clausius_Clapeyron', 'critical_point'],
-        '엔트로피': ['entropy', '제3법칙', 'third_law', '볼츠만', 'Boltzmann'],
-        '기계학습': ['machine_learning', 'deep_learning', 'neural_networks', 'AI', 'data_science'],
-        '알고리즘': ['algorithms', 'data_structures', 'computational_complexity', 'optimization'],
-        '수학': ['mathematics', '미적분', 'calculus', '선형대수', 'linear_algebra']
-    }
-    
-    for keyword, tags in keyword_mapping.items():
-        if keyword in text_content:
-            expert_tags.extend(tags[:3])  # 최대 3개씩
-    
-    # 중복 제거 및 최대 6개 선택
-    expert_tags = list(dict.fromkeys(expert_tags))[:6]
-    
-    report.append("📊 **관점 1: 전문가 지향 태그 (알고리즘 최적화 + 전문가 트래픽)**")
-    report.append("   목적: 검색 알고리즘 인덱싱, 학술/전문가 검색 유입")
-    report.append(f"   추천 태그: {', '.join(f'#{tag}' for tag in expert_tags)}")
+    # LLM에게 제공할 태그 생성 가이드라인
+    report.append("=" * 60)
+    report.append("💡 **LLM 태그 생성 지침 (Two-Perspective Approach)**")
+    report.append("=" * 60)
     report.append("")
     
-    # 관점 2: 초보자 지향 (쉬운 검색어 + 대중 수요)
-    beginner_tags = []
-    
-    beginner_mapping = {
-        '열역학': ['열역학_쉽게', '물리_기초', '열역학_입문', '과학_공부', '대학물리'],
-        '자유에너지': ['자유에너지란', '화학반응_이해', '과학_개념', '대학화학'],
-        '맥스웰': ['맥스웰_관계식', '편미분_쉽게', '수식_이해', '물리_공식'],
-        '상전이': ['물의_상태변화', '얼음_증기', '끓는점', '녹는점', '상변화'],
-        '엔트로피': ['엔트로피란', '무질서도', '과학_용어', '열역학_개념'],
-        '따라하기': ['튜토리얼', '초보자_가이드', '쉬운_설명', '입문'],
-        '프로그래밍': ['코딩_배우기', '프로그래밍_입문', '개발자_되기', '코딩_기초'],
-        '공부': ['자격증', '시험준비', '학습법', '독학']
-    }
-    
-    for keyword, tags in beginner_mapping.items():
-        if keyword in text_content:
-            beginner_tags.extend(tags[:3])
-    
-    # 중복 제거 및 최대 6개
-    beginner_tags = list(dict.fromkeys(beginner_tags))[:6]
-    
-    report.append("🎯 **관점 2: 초보자 지향 태그 (대중 검색어 + 교육 트래픽)**")
-    report.append("   목적: 일반인 검색 유입, 학습자/입문자 타겟팅")
-    report.append(f"   추천 태그: {', '.join(f'#{tag}' for tag in beginner_tags)}")
+    report.append("📊 **관점 1: 전문가 지향 태그 (Expert-Oriented)**")
+    report.append("   목표: 검색 알고리즘 인덱싱, 학술/전문가 검색 유입")
+    report.append("   생성 원칙:")
+    report.append("   • 영문 학술 용어 사용 (예: Maxwell_relations, thermodynamics)")
+    report.append("   • 명확한 기술 키워드 (예: Gibbs_free_energy, phase_transition)")
+    report.append("   • 검색 엔진 최적화 (SEO) 고려")
+    report.append("   • 롱테일 키워드 전략 (예: Clausius_Clapeyron_equation)")
+    report.append("   **생성할 태그 수: 5-6개**")
     report.append("")
     
-    # 최종 권장사항
-    report.append("💡 **사용 전략:**")
+    report.append("🎯 **관점 2: 초보자 지향 태그 (Beginner-Oriented)**")
+    report.append("   목표: 일반인 검색 유입, 학습자/입문자 타겟팅")
+    report.append("   생성 원칙:")
+    report.append("   • 한글 쉬운 표현 (예: 열역학_쉽게, 물리_기초)")
+    report.append("   • '란', '이란', '_입문', '_쉽게' 접미사 활용")
+    report.append("   • 대중적 검색어 (예: 과학_공부, 대학물리)")
+    report.append("   • 교육/학습 관련 키워드 (예: 독학, 개념정리)")
+    report.append("   **생성할 태그 수: 5-6개**")
+    report.append("")
+    
+    report.append("🔧 **태그 생성 프로세스:**")
+    report.append("   1. 콘텐츠의 핵심 주제와 키워드를 자율 분석")
+    report.append("   2. 관점 1: 전문 용어 기반 태그 5-6개 생성")
+    report.append("   3. 관점 2: 대중 검색어 기반 태그 5-6개 생성")
+    report.append("   4. 중복 제거 및 검색 효율성 검증")
+    report.append("   5. 최종 태그 리스트를 '#태그명' 형식으로 출력")
+    report.append("")
+    
+    report.append("💡 **사용 전략 (자동 안내):**")
     report.append("   • 네이버 블로그: 초보자 태그 5개 + 전문가 태그 1-2개 혼합")
     report.append("   • 티스토리/브런치: 전문가 태그 위주로 SEO 최적화")
     report.append("   • 검색 엔진 노출: 전문가 태그로 롱테일 키워드 확보")
+    report.append("   • 소셜 미디어: 초보자 태그로 대중 접근성 향상")
+    report.append("")
+    
+    report.append("=" * 60)
+    report.append("🤖 **LLM 실행 필요: 위 가이드라인을 읽고 실제 태그를 생성하세요**")
+    report.append("=" * 60)
     
     return "\n".join(report)
 
