@@ -1,0 +1,1284 @@
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>열역학 3단계: 자유에너지와 상전이의 세계</title>
+</head>
+
+<body
+    style="font-family: 'Malgun Gothic', sans-serif; background: rgb(249, 248, 246); color: rgb(45, 45, 45); line-height: 1.9; padding: 48px 24px; max-width: 680px; margin: 0 auto;">
+
+    <!-- 메인 타이틀 -->
+    <p style="font-size: 32px; color: rgb(26, 26, 26); margin-bottom: 8px; font-weight: 800; letter-spacing: -1px;">
+        열역학 3단계: 자유에너지와 상전이의 세계
+    </p>
+    <p style="font-size: 14px; color: rgb(122, 122, 122); margin-bottom: 20px; line-height: 1.8;">
+        자유에너지의 본질과 상(Phase)이 바뀌는 순간의 물리학
+    </p>
+
+    <!-- 메타 정보 박스 -->
+    <table style="width: 100%; border-collapse: collapse; margin-bottom: 48px;">
+        <tr>
+            <td
+                style="background: rgb(45, 45, 45); color: rgb(232, 230, 227); padding: 20px 24px; font-size: 14px; line-height: 1.8;">
+                <span style="color: rgb(244, 208, 63); font-weight: 600;">읽는 시간:</span> 약 15분<br>
+                <span style="color: rgb(244, 208, 63); font-weight: 600;">급할 때 필독:</span> 2.1절 (네 개의 열역학 포텐셜), 2.3.4절
+                (클라우지우스-클라페이론 방정식)<br>
+                <span style="font-size: 13px; color: rgb(168, 168, 168);">마지막 업데이트: 2026.01</span>
+            </td>
+        </tr>
+    </table>
+
+    <!-- 학습 목표 -->
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td style="background: rgb(237, 236, 234); padding: 22px 26px; border-left: 3px solid rgb(122, 122, 122);">
+                <p style="font-size: 15.5px; color: rgb(61, 61, 61); margin-bottom: 0; line-height: 1.8;">
+                    지금까지 배운 U(내부에너지)와 S(엔트로피)만으로는 부족해. 실제 실험실에서는 온도나 압력을 고정하고 실험하잖아? 그런 <span
+                        style="color: rgb(26, 82, 118); font-weight: 600;">'현실적 조건'</span>에서 뭐가 일어날지 예측하려면 새로운 도구가 필요해.
+                    그게 바로 <span style="color: rgb(192, 57, 43); font-weight: 600;">자유에너지</span>야. 그리고 물이 얼거나 끓는 것처럼
+                    상(phase)이 바뀌는 현상... 이걸 수학적으로 정복해보자.
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <!-- 구분선 -->
+    <hr style="border: none; border-top: 1px solid rgb(204, 204, 204); margin: 56px 0;">
+
+    <!-- PART 1 제목 -->
+    <p
+        style="font-size: 13px; color: rgb(122, 122, 122); text-align: center; margin: 72px 0 16px 0; font-weight: 600; letter-spacing: 3px;">
+        PART 1</p>
+    <p style="font-size: 26px; color: rgb(26, 26, 26); text-align: center; margin: 0 0 48px 0; font-weight: 800;">이론적 기초
+        (배경지식)</p>
+
+    <!-- 1.1 섹션 -->
+    <p
+        style="font-size: 21px; color: rgb(26, 26, 26); margin: 56px 0 20px 0; font-weight: 700; padding-bottom: 12px; border-bottom: 2px solid rgb(26, 26, 26);">
+        1.1 지금까지의 여정 연결하기
+    </p>
+
+    <p style="font-size: 17px; color: rgb(61, 61, 61); margin: 32px 0 14px 0; font-weight: 600;">
+        기초부터 시작하자
+    </p>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        1단계에서 뭘 배웠지? <span style="color: rgb(26, 82, 118); font-weight: 600;">에너지는 보존된다</span> (제1법칙).<br>
+        2단계에서 뭘 배웠지? <span style="color: rgb(26, 82, 118); font-weight: 600;">에너지는 방향이 있다</span> (제2법칙, 엔트로피).
+    </p>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        그런데 말이야...
+    </p>
+
+    <!-- 생각해볼 질문 박스 -->
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td style="background: rgb(254, 249, 231); padding: 22px 26px; border-left: 3px solid rgb(212, 160, 23);">
+                <p style="font-size: 15.5px; color: rgb(61, 61, 61); margin-bottom: 0; line-height: 1.8;">
+                    <span style="font-weight: 600;">생각해볼 질문 1</span><br>
+                    네가 화학 실험실에서 반응을 시킨다고 해봐. "이 반응이 저절로 일어날까?"를 판단하려면 뭘 봐야 해? 엔트로피가 증가하면 될까?
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        잠깐 생각해봐. 얼음이 녹으면 엔트로피 증가하지? 그런데 냉동실에서는 물이 얼잖아 (엔트로피 감소). 뭔가 이상하지 않아?
+    </p>
+
+    <hr style="border: none; border-top: 1px solid rgb(204, 204, 204); margin: 32px 0;">
+
+    <p style="font-size: 17px; color: rgb(61, 61, 61); margin: 32px 0 14px 0; font-weight: 600;">
+        고등학생 수준으로 확장하면
+    </p>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        핵심은 이거야: <span style="color: rgb(192, 57, 43); font-weight: 600;">계(system)만 보면 안 돼. 주위(surroundings)까지 봐야
+            해.</span>
+    </p>
+
+    <!-- 수식 박스 -->
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td
+                style="background: rgb(255, 255, 255); padding: 20px 24px; border: 1px solid rgb(221, 221, 221); text-align: center;">
+                <p
+                    style="font-size: 16px; color: rgb(26, 26, 26); margin-bottom: 0; line-height: 1.8; font-weight: 500;">
+                    ΔS_total = ΔS_system + ΔS_surroundings ≥ 0
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        냉동실에서 물이 얼 때:
+    </p>
+
+    <p style="font-size: 15px; margin-bottom: 10px; color: rgb(77, 77, 77); line-height: 1.8;">• ΔS_system &lt; 0 (물 →
+        얼음, 질서 증가)</p>
+    <p style="font-size: 15px; margin-bottom: 10px; color: rgb(77, 77, 77); line-height: 1.8;">• ΔS_surroundings &gt; 0
+        (냉동실 모터가 열 방출)</p>
+    <p style="font-size: 15px; margin-bottom: 18px; color: rgb(77, 77, 77); line-height: 1.8;">• <span
+            style="font-weight: 600;">총합은 양수!</span></p>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        하지만... 매번 주위까지 계산하는 건 너무 귀찮잖아?
+    </p>
+
+    <!-- 핵심 인사이트 박스 -->
+    <table style="width: 100%; border-collapse: collapse; margin: 26px 0;">
+        <tr>
+            <td style="background: rgb(45, 45, 45); color: rgb(232, 230, 227); padding: 24px 28px;">
+                <p style="font-size: 16px; color: rgb(244, 208, 63); font-weight: 600; margin-bottom: 12px;">그래서 천재들이
+                    생각했어:</p>
+                <p style="font-size: 15.5px; color: rgb(232, 230, 227); margin-bottom: 0; line-height: 1.8;">
+                    "주위 정보를 계 안에 '숨겨놓는' 새로운 함수를 만들면 어떨까?"<br>
+                    이게 바로 <span style="color: rgb(244, 208, 63); font-weight: 600;">열역학적 포텐셜(Thermodynamic
+                        Potentials)</span>의 탄생 배경이야.
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <!-- 이미지 삽입 - 열역학 개념 -->
+    <table style="width: 100%; border-collapse: collapse; margin: 36px 0;">
+        <tr>
+            <td style="padding: 0; text-align: center;">
+                <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=680&q=80" alt="열역학 에너지 흐름 개념도"
+                    style="width: 100%; height: auto;">
+                <p
+                    style="font-size: 12px; color: rgb(153, 153, 153); margin-top: 10px; text-align: right; line-height: 1.8;">
+                    에너지의 흐름과 변환을 시각화한 이미지 | Unsplash
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <!-- 1.2 섹션 -->
+    <p
+        style="font-size: 21px; color: rgb(26, 26, 26); margin: 56px 0 20px 0; font-weight: 700; padding-bottom: 12px; border-bottom: 2px solid rgb(26, 26, 26);">
+        1.2 왜 "포텐셜"이라고 부를까?
+    </p>
+
+    <p style="font-size: 17px; color: rgb(61, 61, 61); margin: 32px 0 14px 0; font-weight: 600;">
+        중학교 물리 연결
+    </p>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        중력 퍼텐셜에너지 기억나? U_g = mgh
+    </p>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        높은 곳에서 공을 놓으면 <span style="font-weight: 600;">자동으로</span> 낮은 곳으로 굴러가. 왜? 퍼텐셜에너지가 <span
+            style="color: rgb(26, 82, 118); font-weight: 600;">최소가 되려고</span> 하니까.
+    </p>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        열역학 포텐셜도 똑같아:
+    </p>
+
+    <!-- 비교 테이블 -->
+    <div style="overflow-x: auto; margin: 24px 0;">
+        <table
+            style="width: 100%; border-collapse: collapse; font-size: 14px; min-width: 300px; background: rgb(255, 255, 255);">
+            <tr>
+                <th
+                    style="background: rgb(45, 45, 45); color: rgb(244, 208, 63); padding: 14px 12px; text-align: left; font-weight: 600; font-size: 13px;">
+                    역학</th>
+                <th
+                    style="background: rgb(45, 45, 45); color: rgb(244, 208, 63); padding: 14px 12px; text-align: left; font-weight: 600; font-size: 13px;">
+                    열역학</th>
+            </tr>
+            <tr>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">공이
+                    낮은 곳으로 굴러감</td>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">반응이
+                    자발적으로 일어남</td>
+            </tr>
+            <tr>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">U_g
+                    최소화</td>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">
+                    자유에너지 최소화</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- 1.3 섹션 -->
+    <p
+        style="font-size: 21px; color: rgb(26, 26, 26); margin: 56px 0 20px 0; font-weight: 700; padding-bottom: 12px; border-bottom: 2px solid rgb(26, 26, 26);">
+        1.3 제3법칙: 절대영도라는 기준점
+    </p>
+
+    <p style="font-size: 17px; color: rgb(61, 61, 61); margin: 32px 0 14px 0; font-weight: 600;">
+        기초부터 시작하자
+    </p>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        온도계를 계속 낮추면... 어디까지 갈 수 있어?
+    </p>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        답: <span style="color: rgb(192, 57, 43); font-weight: 600;">-273.15°C</span> (= 0 K, 절대영도)
+    </p>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        왜 더 낮출 수 없어? 온도란 "분자들의 떨림"이잖아. 더 이상 안 떨리면, 그게 바로 0이야!
+    </p>
+
+    <hr style="border: none; border-top: 1px solid rgb(204, 204, 204); margin: 32px 0;">
+
+    <p style="font-size: 17px; color: rgb(61, 61, 61); margin: 32px 0 14px 0; font-weight: 600;">
+        고등학생 수준으로 확장하면
+    </p>
+
+    <!-- 정의 박스 -->
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td style="background: rgb(237, 236, 234); padding: 22px 26px; border-left: 3px solid rgb(122, 122, 122);">
+                <p style="font-size: 15.5px; color: rgb(61, 61, 61); margin-bottom: 0; line-height: 1.8;">
+                    <span style="font-weight: 600;">열역학 제3법칙 (네른스트-플랑크 서술)</span><br><br>
+                    완전 결정의 엔트로피는 절대영도에서 0에 접근해.<br>
+                    lim(T→0) S = 0 (완전 결정의 경우)
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <p style="font-size: 17px; color: rgb(61, 61, 61); margin: 32px 0 14px 0; font-weight: 600;">
+        왜 중요해?
+    </p>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        이게 있어야 엔트로피에 <span style="color: rgb(26, 82, 118); font-weight: 600;">절대적인 기준점</span>이 생겨. 2단계에서 배운 ΔS는
+        "변화량"이었지? 3법칙 덕분에 S 자체를 말할 수 있게 돼.
+    </p>
+
+    <hr style="border: none; border-top: 1px solid rgb(204, 204, 204); margin: 32px 0;">
+
+    <p style="font-size: 17px; color: rgb(61, 61, 61); margin: 32px 0 14px 0; font-weight: 600;">
+        대학/전문가 수준
+    </p>
+
+    <!-- 전문가 정의 박스 -->
+    <table style="width: 100%; border-collapse: collapse; margin: 26px 0;">
+        <tr>
+            <td style="background: rgb(45, 45, 45); color: rgb(232, 230, 227); padding: 24px 28px;">
+                <p style="font-size: 14px; color: rgb(244, 208, 63); font-weight: 600; margin-bottom: 12px;">정의
+                    (Definition)</p>
+                <p style="font-size: 15.5px; color: rgb(232, 230, 227); margin-bottom: 12px; line-height: 1.8;">
+                    <span style="color: rgb(244, 208, 63); font-weight: 600;">절대영도(Absolute Zero)</span>: 열역학적 온도 척도의
+                    하한으로, 0 K (-273.15°C). 계에서 추출 가능한 열에너지가 없는 상태. 단, 양자역학적 영점에너지(zero-point energy)는 존재해.
+                </p>
+                <p style="font-size: 13px; color: rgb(168, 168, 168); margin-bottom: 0; line-height: 1.8;">
+                    출처: Callen, H.B. (1985). Thermodynamics and an Introduction to Thermostatistics, 2nd ed., Wiley.
+                    Chapter 11.
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        <span style="font-weight: 600;">양자역학적 함의:</span><br>
+        하이젠베르크 불확정성 원리 때문에 입자는 절대영도에서도 완전히 멈출 수 없어. 이게 <span
+            style="color: rgb(26, 82, 118); font-weight: 600;">영점에너지(zero-point energy)</span>야.
+    </p>
+
+    <!-- 구분선 -->
+    <hr style="border: none; border-top: 1px solid rgb(204, 204, 204); margin: 56px 0;">
+
+    <!-- PART 2 제목 -->
+    <p
+        style="font-size: 13px; color: rgb(122, 122, 122); text-align: center; margin: 72px 0 16px 0; font-weight: 600; letter-spacing: 3px;">
+        PART 2</p>
+    <p style="font-size: 26px; color: rgb(26, 26, 26); text-align: center; margin: 0 0 48px 0; font-weight: 800;">본 내용
+    </p>
+
+    <!-- 2.1 섹션 -->
+    <p
+        style="font-size: 21px; color: rgb(26, 26, 26); margin: 56px 0 20px 0; font-weight: 700; padding-bottom: 12px; border-bottom: 2px solid rgb(26, 26, 26);">
+        2.1 네 개의 열역학 포텐셜
+    </p>
+
+    <p style="font-size: 17px; color: rgb(61, 61, 61); margin: 32px 0 14px 0; font-weight: 600;">
+        2.1.1 르장드르 변환의 직관
+    </p>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        <span style="font-weight: 600;">직관적 비유:</span><br>
+        게임에서 캐릭터 스탯을 볼 때, 같은 정보를 다르게 표현할 수 있어:
+    </p>
+
+    <!-- 비교 테이블 -->
+    <div style="overflow-x: auto; margin: 24px 0;">
+        <table
+            style="width: 100%; border-collapse: collapse; font-size: 14px; min-width: 300px; background: rgb(255, 255, 255);">
+            <tr>
+                <th
+                    style="background: rgb(45, 45, 45); color: rgb(244, 208, 63); padding: 14px 12px; text-align: left; font-weight: 600; font-size: 13px;">
+                    표현 1</th>
+                <th
+                    style="background: rgb(45, 45, 45); color: rgb(244, 208, 63); padding: 14px 12px; text-align: left; font-weight: 600; font-size: 13px;">
+                    표현 2</th>
+            </tr>
+            <tr>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">공격력
+                    100, 방어력 50</td>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">공격형
+                    (총합 150)</td>
+            </tr>
+        </table>
+    </div>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        둘 다 같은 캐릭터를 설명해. 그냥 <span style="font-weight: 600;">관점(변수)</span>이 다를 뿐이야.
+    </p>
+
+    <hr style="border: none; border-top: 1px solid rgb(204, 204, 204); margin: 32px 0;">
+
+    <p style="font-size: 17px; color: rgb(61, 61, 61); margin: 32px 0 14px 0; font-weight: 600;">
+        고등학생 수준으로 확장하면
+    </p>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        내부에너지 U의 기본 관계식 기억해?
+    </p>
+
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td
+                style="background: rgb(255, 255, 255); padding: 20px 24px; border: 1px solid rgb(221, 221, 221); text-align: center;">
+                <p
+                    style="font-size: 16px; color: rgb(26, 26, 26); margin-bottom: 0; line-height: 1.8; font-weight: 500;">
+                    dU = TdS - PdV
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        여기서 S와 V가 <span style="color: rgb(26, 82, 118); font-weight: 600;">자연변수(natural variables)</span>야.
+    </p>
+
+    <!-- 생각해볼 질문 박스 -->
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td style="background: rgb(254, 249, 231); padding: 22px 26px; border-left: 3px solid rgb(212, 160, 23);">
+                <p style="font-size: 15.5px; color: rgb(61, 61, 61); margin-bottom: 0; line-height: 1.8;">
+                    <span style="font-weight: 600;">생각해볼 질문 2</span><br>
+                    실험실에서 S(엔트로피)를 직접 조절할 수 있어? 아니면 T(온도)를 조절하기가 더 쉬워?
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        당연히 온도지! 온도계 보면서 히터 조절하면 되잖아.
+    </p>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        그래서... S 대신 T를 변수로 쓰는 새 함수가 필요해.
+    </p>
+
+    <!-- 이미지 삽입 - 실험실 -->
+    <table style="width: 100%; border-collapse: collapse; margin: 36px 0;">
+        <tr>
+            <td style="padding: 0; text-align: center;">
+                <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=680&q=80" alt="화학 실험실 온도 조절 장치"
+                    style="width: 100%; height: auto;">
+                <p
+                    style="font-size: 12px; color: rgb(153, 153, 153); margin-top: 10px; text-align: right; line-height: 1.8;">
+                    실험실에서는 온도 조절이 훨씬 쉽지 | Unsplash
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <hr style="border: none; border-top: 1px solid rgb(204, 204, 204); margin: 32px 0;">
+
+    <p style="font-size: 17px; color: rgb(61, 61, 61); margin: 32px 0 14px 0; font-weight: 600;">
+        대학 수준 - 르장드르 변환
+    </p>
+
+    <!-- 르장드르 정의 박스 -->
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td style="background: rgb(237, 236, 234); padding: 22px 26px; border-left: 3px solid rgb(122, 122, 122);">
+                <p style="font-size: 15.5px; color: rgb(61, 61, 61); margin-bottom: 0; line-height: 1.8;">
+                    <span style="font-weight: 600;">정의 (Definition)</span><br><br>
+                    <span style="color: rgb(26, 82, 118); font-weight: 600;">르장드르 변환(Legendre Transformation)</span>:
+                    함수의 독립변수를 그 변수에 대한 편미분 값(켤레 변수)으로 바꾸는 수학적 기법.
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        U(S,V)에서 S를 T = (∂U/∂S)_V로 바꾸려면:
+    </p>
+
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td
+                style="background: rgb(255, 255, 255); padding: 20px 24px; border: 2px solid rgb(45, 45, 45); text-align: center;">
+                <p
+                    style="font-size: 18px; color: rgb(26, 26, 26); margin-bottom: 0; line-height: 1.8; font-weight: 600;">
+                    F = U - TS
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        이게 <span style="color: rgb(192, 57, 43); font-weight: 600;">헬름홀츠 자유에너지(Helmholtz Free Energy)</span>야!
+    </p>
+
+    <!-- 2.1.2 네 포텐셜 총정리 -->
+    <p style="font-size: 17px; color: rgb(61, 61, 61); margin: 32px 0 14px 0; font-weight: 600;">
+        2.1.2 네 포텐셜 총정리
+    </p>
+
+    <!-- 포텐셜 종합 테이블 -->
+    <div style="overflow-x: auto; margin: 24px 0;">
+        <table
+            style="width: 100%; border-collapse: collapse; font-size: 14px; min-width: 500px; background: rgb(255, 255, 255);">
+            <tr>
+                <th
+                    style="background: rgb(45, 45, 45); color: rgb(244, 208, 63); padding: 14px 12px; text-align: left; font-weight: 600; font-size: 13px;">
+                    포텐셜</th>
+                <th
+                    style="background: rgb(45, 45, 45); color: rgb(244, 208, 63); padding: 14px 12px; text-align: left; font-weight: 600; font-size: 13px;">
+                    기호</th>
+                <th
+                    style="background: rgb(45, 45, 45); color: rgb(244, 208, 63); padding: 14px 12px; text-align: left; font-weight: 600; font-size: 13px;">
+                    정의</th>
+                <th
+                    style="background: rgb(45, 45, 45); color: rgb(244, 208, 63); padding: 14px 12px; text-align: left; font-weight: 600; font-size: 13px;">
+                    자연변수</th>
+                <th
+                    style="background: rgb(45, 45, 45); color: rgb(244, 208, 63); padding: 14px 12px; text-align: left; font-weight: 600; font-size: 13px;">
+                    미분형</th>
+            </tr>
+            <tr>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">
+                    내부에너지</td>
+                <td
+                    style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77); font-weight: 600;">
+                    U</td>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">기본
+                </td>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">S,
+                    V</td>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">dU
+                    = TdS - PdV</td>
+            </tr>
+            <tr>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">
+                    헬름홀츠</td>
+                <td
+                    style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77); font-weight: 600;">
+                    F</td>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">U -
+                    TS</td>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">T,
+                    V</td>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">dF
+                    = -SdT - PdV</td>
+            </tr>
+            <tr>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">엔탈피
+                </td>
+                <td
+                    style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77); font-weight: 600;">
+                    H</td>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">U +
+                    PV</td>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">S,
+                    P</td>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">dH
+                    = TdS + VdP</td>
+            </tr>
+            <tr>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">깁스
+                </td>
+                <td
+                    style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77); font-weight: 600;">
+                    G</td>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">H -
+                    TS</td>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">T,
+                    P</td>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">dG
+                    = -SdT + VdP</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- 암기 팁 박스 -->
+    <table style="width: 100%; border-collapse: collapse; margin: 26px 0;">
+        <tr>
+            <td style="background: rgb(45, 45, 45); color: rgb(232, 230, 227); padding: 24px 28px;">
+                <p style="font-size: 14px; color: rgb(244, 208, 63); font-weight: 600; margin-bottom: 12px;">암기 팁</p>
+                <p
+                    style="font-size: 15px; color: rgb(232, 230, 227); margin-bottom: 12px; line-height: 1.8; font-family: monospace;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+                    &nbsp;&nbsp;U --- H<br>
+                    &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+                    &nbsp;&nbsp;F --- G<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T
+                </p>
+                <p style="font-size: 14px; color: rgb(168, 168, 168); margin-bottom: 0; line-height: 1.8;">
+                    가로: V ↔ P (압력-부피) | 세로: S ↔ T (엔트로피-온도)
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <!-- 생각해볼 질문 박스 -->
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td style="background: rgb(254, 249, 231); padding: 22px 26px; border-left: 3px solid rgb(212, 160, 23);">
+                <p style="font-size: 15.5px; color: rgb(61, 61, 61); margin-bottom: 0; line-height: 1.8;">
+                    <span style="font-weight: 600;">생각해볼 질문 3</span><br>
+                    왜 G가 화학에서 제일 인기 있을까? 힌트: 화학 실험은 보통 어떤 조건에서 해?
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <!-- 계속... (파일이 너무 길어서 Part 1로 저장) -->
+
+    <!-- 마무리 박스 -->
+    <table style="width: 100%; border-collapse: collapse; margin: 40px 0;">
+        <tr>
+            <td
+                style="background: rgb(45, 45, 45); color: rgb(168, 168, 168); padding: 20px 24px; font-size: 12px; line-height: 1.9;">
+                <p style="color: rgb(232, 230, 227); font-size: 11px; margin-bottom: 12px; letter-spacing: 1px;">참고 문헌
+                </p>
+                <p style="margin-bottom: 0; line-height: 1.9;">
+                    • Callen, H.B. (1985). Thermodynamics and an Introduction to Thermostatistics, 2nd ed., Wiley.<br>
+                    • Atkins, P. & de Paula, J. (2014). Atkins' Physical Chemistry, 10th ed., Oxford.<br>
+                    • Zemansky, M.W. & Dittman, R.H. (1997). Heat and Thermodynamics, 7th ed., McGraw-Hill.
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <p style="font-size: 13px; color: rgb(122, 122, 122); text-align: center; margin-top: 48px; line-height: 1.8;">
+        <!-- Part 2 시작 표시 -->
+    <p style="font-size: 13px; color: rgb(122, 122, 122); text-align: center; margin: 0 0 48px 0; line-height: 1.8;">
+        --- Part 2 시작 ---
+    </p>
+
+    <!-- 2.1.3 자유에너지의 물리적 의미 -->
+    <p style="font-size: 17px; color: rgb(61, 61, 61); margin: 32px 0 14px 0; font-weight: 600;">
+        2.1.3 자유에너지의 물리적 의미
+    </p>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        <span style="font-weight: 600;">헬름홀츠 자유에너지 F = U - TS:</span>
+    </p>
+
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td style="background: rgb(237, 236, 234); padding: 22px 26px; border-left: 3px solid rgb(122, 122, 122);">
+                <p style="font-size: 15.5px; color: rgb(61, 61, 61); margin-bottom: 0; line-height: 1.8;">
+                    <span style="font-weight: 600;">정의:</span><br>
+                    등온(T 일정) 과정에서 계가 할 수 있는 <span style="color: rgb(192, 57, 43); font-weight: 600;">최대 일</span>.
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        분해해보자:
+    </p>
+
+    <p style="font-size: 15px; margin-bottom: 10px; color: rgb(77, 77, 77); line-height: 1.8;">• U: 총 내부에너지</p>
+    <p style="font-size: 15px; margin-bottom: 10px; color: rgb(77, 77, 77); line-height: 1.8;">• TS: "잠겨있는" 에너지 (엔트로피
+        때문에 질서있는 일로 못 바꿈)</p>
+    <p style="font-size: 15px; margin-bottom: 18px; color: rgb(77, 77, 77); line-height: 1.8;">• F = U - TS: <span
+            style="color: rgb(26, 82, 118); font-weight: 600;">진짜 쓸 수 있는</span> 에너지 = "<span
+            style="font-weight: 600;">자유</span>" 에너지</p>
+
+    <hr style="border: none; border-top: 1px solid rgb(204, 204, 204); margin: 32px 0;">
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        <span style="font-weight: 600;">깁스 자유에너지 G = H - TS:</span>
+    </p>
+
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td style="background: rgb(237, 236, 234); padding: 22px 26px; border-left: 3px solid rgb(122, 122, 122);">
+                <p style="font-size: 15.5px; color: rgb(61, 61, 61); margin-bottom: 0; line-height: 1.8;">
+                    <span style="font-weight: 600;">정의:</span><br>
+                    등온등압(T, P 일정) 과정에서 계가 할 수 있는 <span style="color: rgb(192, 57, 43); font-weight: 600;">최대 비팽창
+                        일</span> (non-expansion work).
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        왜 화학자들이 좋아하냐면:
+    </p>
+
+    <p style="font-size: 15px; margin-bottom: 10px; color: rgb(77, 77, 77); line-height: 1.8;">• 실험실: 대기압(P 일정) + 항온조(T
+        일정)</p>
+    <p style="font-size: 15px; margin-bottom: 10px; color: rgb(77, 77, 77); line-height: 1.8;">• <span
+            style="color: rgb(192, 57, 43); font-weight: 600;">ΔG &lt; 0</span>이면 <span style="font-weight: 600;">자발적
+            반응!</span></p>
+    <p style="font-size: 15px; margin-bottom: 18px; color: rgb(77, 77, 77); line-height: 1.8;">• <span
+            style="color: rgb(26, 82, 118); font-weight: 600;">ΔG = 0</span>이면 <span
+            style="font-weight: 600;">평형!</span></p>
+
+    <p style="font-size: 13px; color: rgb(122, 122, 122); margin-bottom: 18px; line-height: 1.8;">
+        출처: Atkins, P. & de Paula, J. (2014). Atkins' Physical Chemistry, 10th ed., Oxford. p. 128-135.
+    </p>
+
+    <!-- 자발성 판정 테이블 -->
+    <p style="font-size: 17px; color: rgb(61, 61, 61); margin: 32px 0 14px 0; font-weight: 600;">
+        전문가 수준 - 자발성 판정
+    </p>
+
+    <div style="overflow-x: auto; margin: 24px 0;">
+        <table
+            style="width: 100%; border-collapse: collapse; font-size: 14px; min-width: 400px; background: rgb(255, 255, 255);">
+            <tr>
+                <th
+                    style="background: rgb(45, 45, 45); color: rgb(244, 208, 63); padding: 14px 12px; text-align: left; font-weight: 600; font-size: 13px;">
+                    조건</th>
+                <th
+                    style="background: rgb(45, 45, 45); color: rgb(244, 208, 63); padding: 14px 12px; text-align: left; font-weight: 600; font-size: 13px;">
+                    자발성 판정 기준</th>
+            </tr>
+            <tr>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">고립계
+                </td>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">dS
+                    ≥ 0 (엔트로피 증가)</td>
+            </tr>
+            <tr>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">
+                    등온등적 (T, V 일정)</td>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">dF
+                    ≤ 0 (헬름홀츠 감소)</td>
+            </tr>
+            <tr>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">
+                    등온등압 (T, P 일정)</td>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">dG
+                    ≤ 0 (깁스 감소)</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- 유도 과정 박스 -->
+    <table style="width: 100%; border-collapse: collapse; margin: 26px 0;">
+        <tr>
+            <td style="background: rgb(45, 45, 45); color: rgb(232, 230, 227); padding: 24px 28px;">
+                <p style="font-size: 14px; color: rgb(244, 208, 63); font-weight: 600; margin-bottom: 12px;">유도 (스스로
+                    해보기!)</p>
+                <p style="font-size: 15px; color: rgb(232, 230, 227); margin-bottom: 0; line-height: 2;">
+                    등온등압에서 dS_total = dS_system + dS_surr ≥ 0<br><br>
+                    주위가 받은 열: q_surr = -q_sys (등압에서 q_sys = dH)<br>
+                    dS_surr = q_surr/T = -dH/T<br><br>
+                    따라서:<br>
+                    dS_sys - dH/T ≥ 0<br>
+                    TdS_sys - dH ≥ 0<br>
+                    -(dH - TdS_sys) ≥ 0<br>
+                    <span style="color: rgb(244, 208, 63); font-weight: 600;">-dG ≥ 0 → dG ≤ 0</span>
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <!-- 이미지 삽입 -->
+    <table style="width: 100%; border-collapse: collapse; margin: 36px 0;">
+        <tr>
+            <td style="padding: 0; text-align: center;">
+                <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=680&q=80" alt="수학 공식 유도 과정 칠판"
+                    style="width: 100%; height: auto;">
+                <p
+                    style="font-size: 12px; color: rgb(153, 153, 153); margin-top: 10px; text-align: right; line-height: 1.8;">
+                    유도 과정을 따라가보면 개념이 훨씬 선명해져 | Unsplash
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <!-- 구분선 -->
+    <hr style="border: none; border-top: 1px solid rgb(204, 204, 204); margin: 56px 0;">
+
+    <!-- 2.2 맥스웰 관계식 -->
+    <p
+        style="font-size: 21px; color: rgb(26, 26, 26); margin: 56px 0 20px 0; font-weight: 700; padding-bottom: 12px; border-bottom: 2px solid rgb(26, 26, 26);">
+        2.2 맥스웰 관계식 (Maxwell Relations)
+    </p>
+
+    <p style="font-size: 17px; color: rgb(61, 61, 61); margin: 32px 0 14px 0; font-weight: 600;">
+        2.2.1 수학적 기초: 완전미분
+    </p>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        함수 f(x, y)의 전미분:
+    </p>
+
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td
+                style="background: rgb(255, 255, 255); padding: 20px 24px; border: 1px solid rgb(221, 221, 221); text-align: center;">
+                <p
+                    style="font-size: 16px; color: rgb(26, 26, 26); margin-bottom: 0; line-height: 1.8; font-weight: 500;">
+                    df = (∂f/∂x)_y dx + (∂f/∂y)_x dy
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        간단히 df = M dx + N dy라고 쓰면,
+    </p>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        <span style="font-weight: 600;">완전미분 조건:</span>
+    </p>
+
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td
+                style="background: rgb(255, 255, 255); padding: 20px 24px; border: 2px solid rgb(45, 45, 45); text-align: center;">
+                <p
+                    style="font-size: 16px; color: rgb(26, 26, 26); margin-bottom: 0; line-height: 1.8; font-weight: 600;">
+                    (∂M/∂y)_x = (∂N/∂x)_y
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td style="background: rgb(254, 249, 231); padding: 22px 26px; border-left: 3px solid rgb(212, 160, 23);">
+                <p style="font-size: 15.5px; color: rgb(61, 61, 61); margin-bottom: 0; line-height: 1.8;">
+                    <span style="font-weight: 600;">생각해볼 질문 4</span><br>
+                    왜 이게 성립할까? 힌트: ∂²f/∂x∂y와 ∂²f/∂y∂x의 관계는?
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <!-- 2.2.2 네 개의 맥스웰 관계식 유도 -->
+    <p style="font-size: 17px; color: rgb(61, 61, 61); margin: 32px 0 14px 0; font-weight: 600;">
+        2.2.2 네 개의 맥스웰 관계식 유도
+    </p>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        <span style="font-weight: 600;">dU = TdS - PdV</span>에서:
+    </p>
+
+    <p style="font-size: 15px; margin-bottom: 10px; color: rgb(77, 77, 77); line-height: 1.8;">• M = T, N = -P</p>
+    <p style="font-size: 15px; margin-bottom: 18px; color: rgb(77, 77, 77); line-height: 1.8;">• x = S, y = V</p>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        완전미분 조건 적용:
+    </p>
+
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td
+                style="background: rgb(255, 255, 255); padding: 20px 24px; border: 1px solid rgb(221, 221, 221); text-align: center;">
+                <p
+                    style="font-size: 16px; color: rgb(26, 26, 26); margin-bottom: 0; line-height: 1.8; font-weight: 500;">
+                    (∂T/∂V)_S = -(∂P/∂S)_V
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        <span style="font-weight: 600;">나머지 세 개도 같은 방식으로:</span>
+    </p>
+
+    <!-- 맥스웰 관계식 종합 테이블 -->
+    <div style="overflow-x: auto; margin: 24px 0;">
+        <table
+            style="width: 100%; border-collapse: collapse; font-size: 14px; min-width: 500px; background: rgb(255, 255, 255);">
+            <tr>
+                <th
+                    style="background: rgb(45, 45, 45); color: rgb(244, 208, 63); padding: 14px 12px; text-align: left; font-weight: 600; font-size: 13px;">
+                    포텐셜</th>
+                <th
+                    style="background: rgb(45, 45, 45); color: rgb(244, 208, 63); padding: 14px 12px; text-align: left; font-weight: 600; font-size: 13px;">
+                    미분형</th>
+                <th
+                    style="background: rgb(45, 45, 45); color: rgb(244, 208, 63); padding: 14px 12px; text-align: left; font-weight: 600; font-size: 13px;">
+                    맥스웰 관계식</th>
+            </tr>
+            <tr>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">U
+                </td>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">dU
+                    = TdS - PdV</td>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">
+                    (∂T/∂V)_S = -(∂P/∂S)_V</td>
+            </tr>
+            <tr style="background: rgb(254, 249, 231);">
+                <td
+                    style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77); font-weight: 600;">
+                    F</td>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">dF
+                    = -SdT - PdV</td>
+                <td
+                    style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(192, 57, 43); font-weight: 600;">
+                    (∂S/∂V)_T = (∂P/∂T)_V</td>
+            </tr>
+            <tr>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">H
+                </td>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">dH
+                    = TdS + VdP</td>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">
+                    (∂T/∂P)_S = (∂V/∂S)_P</td>
+            </tr>
+            <tr style="background: rgb(254, 249, 231);">
+                <td
+                    style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77); font-weight: 600;">
+                    G</td>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">dG
+                    = -SdT + VdP</td>
+                <td
+                    style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(192, 57, 43); font-weight: 600;">
+                    -(∂S/∂P)_T = (∂V/∂T)_P</td>
+            </tr>
+        </table>
+    </div>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        노란색으로 표시된 두 개가 가장 자주 쓰여! (측정 가능한 양들만 포함)
+    </p>
+
+    <!-- 전문가 수준 활용 예시 -->
+    <table style="width: 100%; border-collapse: collapse; margin: 26px 0;">
+        <tr>
+            <td style="background: rgb(45, 45, 45); color: rgb(232, 230, 227); padding: 24px 28px;">
+                <p style="font-size: 14px; color: rgb(244, 208, 63); font-weight: 600; margin-bottom: 12px;">전문가 수준 - 활용
+                    예시</p>
+                <p style="font-size: 15px; color: rgb(232, 230, 227); margin-bottom: 12px; line-height: 1.8;">
+                    <span style="font-weight: 600;">문제:</span> 이상기체의 (∂S/∂V)_T를 구하라.
+                </p>
+                <p style="font-size: 15px; color: rgb(232, 230, 227); margin-bottom: 0; line-height: 2;">
+                    <span style="font-weight: 600;">풀이:</span><br>
+                    맥스웰: (∂S/∂V)_T = (∂P/∂T)_V<br><br>
+                    이상기체 상태방정식 PV = nRT에서:<br>
+                    P = nRT/V<br>
+                    (∂P/∂T)_V = nR/V<br><br>
+                    따라서: <span style="color: rgb(244, 208, 63);">(∂S/∂V)_T = nR/V</span><br><br>
+                    이걸 적분하면 2단계에서 배운 ΔS = nR ln(V₂/V₁) (등온팽창)이 나와!
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <p style="font-size: 13px; color: rgb(122, 122, 122); margin-bottom: 18px; line-height: 1.8;">
+        출처: Zemansky, M.W. & Dittman, R.H. (1997). Heat and Thermodynamics, 7th ed., McGraw-Hill. Chapter 10.
+    </p>
+
+    <!-- 구분선 -->
+    <hr style="border: none; border-top: 1px solid rgb(204, 204, 204); margin: 56px 0;">
+
+    <!-- 2.3 상전이 -->
+    <p
+        style="font-size: 21px; color: rgb(26, 26, 26); margin: 56px 0 20px 0; font-weight: 700; padding-bottom: 12px; border-bottom: 2px solid rgb(26, 26, 26);">
+        2.3 상전이와 클라우지우스-클라페이론 방정식
+    </p>
+
+    <p style="font-size: 17px; color: rgb(61, 61, 61); margin: 32px 0 14px 0; font-weight: 600;">
+        2.3.1 상(Phase)이란?
+    </p>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        <span style="font-weight: 600;">기초부터 시작하자:</span><br>
+        물의 세 가지 모습: 얼음 ↔ 물 ↔ 수증기
+    </p>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        같은 H₂O인데 왜 다르게 보여? <span style="color: rgb(26, 82, 118); font-weight: 600;">분자 배열</span>이 다르니까!
+    </p>
+
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td style="background: rgb(237, 236, 234); padding: 22px 26px; border-left: 3px solid rgb(122, 122, 122);">
+                <p style="font-size: 15.5px; color: rgb(61, 61, 61); margin-bottom: 0; line-height: 1.8;">
+                    <span style="font-weight: 600;">정의 (Definition)</span><br><br>
+                    <span style="color: rgb(26, 82, 118); font-weight: 600;">상(Phase)</span>: 물리적, 화학적으로 균일하고, 명확한 경계로
+                    다른 부분과 구분되는 물질의 상태.<br><br>
+                    <span style="color: rgb(26, 82, 118); font-weight: 600;">상전이(Phase Transition)</span>: 한 상에서 다른 상으로
+                    변하는 것.
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <!-- 상전이 종류 테이블 -->
+    <div style="overflow-x: auto; margin: 24px 0;">
+        <table
+            style="width: 100%; border-collapse: collapse; font-size: 14px; min-width: 400px; background: rgb(255, 255, 255);">
+            <tr>
+                <th
+                    style="background: rgb(45, 45, 45); color: rgb(244, 208, 63); padding: 14px 12px; text-align: left; font-weight: 600; font-size: 13px;">
+                    전이</th>
+                <th
+                    style="background: rgb(45, 45, 45); color: rgb(244, 208, 63); padding: 14px 12px; text-align: left; font-weight: 600; font-size: 13px;">
+                    이름</th>
+                <th
+                    style="background: rgb(45, 45, 45); color: rgb(244, 208, 63); padding: 14px 12px; text-align: left; font-weight: 600; font-size: 13px;">
+                    예시</th>
+            </tr>
+            <tr>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">고 →
+                    액</td>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">
+                    융해(melting)</td>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">얼음
+                    → 물</td>
+            </tr>
+            <tr>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">액 →
+                    기</td>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">
+                    기화(vaporization)</td>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">물 →
+                    수증기</td>
+            </tr>
+            <tr>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">고 →
+                    기</td>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">
+                    승화(sublimation)</td>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">
+                    드라이아이스</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- 이미지 삽입 - 물의 상변화 -->
+    <table style="width: 100%; border-collapse: collapse; margin: 36px 0;">
+        <tr>
+            <td style="padding: 0; text-align: center;">
+                <img src="https://images.unsplash.com/photo-1501630834273-4b5604d2ee31?w=680&q=80"
+                    alt="물의 상변화 이미지 - 얼음과 물" style="width: 100%; height: auto;">
+                <p
+                    style="font-size: 12px; color: rgb(153, 153, 153); margin-top: 10px; text-align: right; line-height: 1.8;">
+                    같은 H₂O, 다른 배열 | Unsplash
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <!-- 2.3.2 상평형도 -->
+    <p style="font-size: 17px; color: rgb(61, 61, 61); margin: 32px 0 14px 0; font-weight: 600;">
+        2.3.2 상평형도 (Phase Diagram)
+    </p>
+
+    <!-- 상평형도 이미지 -->
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td style="padding: 0; text-align: center;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Phase-diag2.svg/600px-Phase-diag2.svg.png"
+                    alt="물질의 상평형도 - 고체, 액체, 기체 영역과 삼중점, 임계점 표시" style="width: 100%; height: auto; max-width: 500px;">
+                <p
+                    style="font-size: 12px; color: rgb(153, 153, 153); margin-top: 10px; text-align: center; line-height: 1.8;">
+                    상평형도: 삼중점(Triple Point)과 임계점(Critical Point) | Wikimedia Commons
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td style="background: rgb(237, 236, 234); padding: 22px 26px; border-left: 3px solid rgb(122, 122, 122);">
+                <p style="font-size: 15.5px; color: rgb(61, 61, 61); margin-bottom: 0; line-height: 1.8;">
+                    <span style="color: rgb(26, 82, 118); font-weight: 600;">삼중점(Triple Point)</span>: 세 상이 동시에 평형을 이루는
+                    유일한 (T, P) 점<br><br>
+                    <span style="color: rgb(26, 82, 118); font-weight: 600;">임계점(Critical Point)</span>: 액체와 기체의 구분이
+                    사라지는 점. 이 이상의 T, P에서는 <span style="font-weight: 600;">초임계 유체</span>
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        <span style="font-weight: 600;">물의 데이터:</span>
+    </p>
+
+    <p style="font-size: 15px; margin-bottom: 10px; color: rgb(77, 77, 77); line-height: 1.8;">• 삼중점: T = 273.16 K, P =
+        611.73 Pa</p>
+    <p style="font-size: 15px; margin-bottom: 18px; color: rgb(77, 77, 77); line-height: 1.8;">• 임계점: T = 647.1 K, P =
+        22.064 MPa</p>
+
+    <!-- 2.3.3 상평형 조건 -->
+    <p style="font-size: 17px; color: rgb(61, 61, 61); margin: 32px 0 14px 0; font-weight: 600;">
+        2.3.3 상평형 조건
+    </p>
+
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td style="background: rgb(254, 249, 231); padding: 22px 26px; border-left: 3px solid rgb(212, 160, 23);">
+                <p style="font-size: 15.5px; color: rgb(61, 61, 61); margin-bottom: 0; line-height: 1.8;">
+                    <span style="font-weight: 600;">생각해볼 질문 5</span><br>
+                    0°C, 1기압에서 얼음과 물이 공존해. 이때 두 상 사이에서 뭐가 같아야 평형이야?
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        <span style="font-weight: 600;">답:</span> 깁스 자유에너지가 같아야 해!
+    </p>
+
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td
+                style="background: rgb(255, 255, 255); padding: 20px 24px; border: 2px solid rgb(45, 45, 45); text-align: center;">
+                <p
+                    style="font-size: 18px; color: rgb(26, 26, 26); margin-bottom: 0; line-height: 1.8; font-weight: 600;">
+                    G_solid = G_liquid
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        <span style="font-weight: 600;">유도:</span><br>
+        등온등압에서 평형이면 dG = 0.<br>
+        만약 G_s &lt; G_l이면 → 모두 고체가 됨 (안정)<br>
+        만약 G_s &gt; G_l이면 → 모두 액체가 됨 (안정)<br>
+        <span style="color: rgb(192, 57, 43); font-weight: 600;">G_s = G_l일 때만 → 두 상이 공존!</span>
+    </p>
+
+    <!-- 2.3.4 클라우지우스-클라페이론 방정식 -->
+    <p style="font-size: 17px; color: rgb(61, 61, 61); margin: 32px 0 14px 0; font-weight: 600;">
+        2.3.4 클라우지우스-클라페이론 방정식
+    </p>
+
+    <table style="width: 100%; border-collapse: collapse; margin: 26px 0;">
+        <tr>
+            <td style="background: rgb(45, 45, 45); color: rgb(232, 230, 227); padding: 24px 28px;">
+                <p style="font-size: 14px; color: rgb(244, 208, 63); font-weight: 600; margin-bottom: 12px;">유도 (함께
+                    따라가보자)</p>
+                <p style="font-size: 15px; color: rgb(232, 230, 227); margin-bottom: 0; line-height: 2;">
+                    두 상 α, β가 평형일 때: G^α(T, P) = G^β(T, P)<br><br>
+                    (T, P)가 살짝 변해도 여전히 평형이면:<br>
+                    dG^α = dG^β<br>
+                    -S^α dT + V^α dP = -S^β dT + V^β dP<br><br>
+                    정리하면:<br>
+                    dP/dT = (S^β - S^α)/(V^β - V^α) = ΔS/ΔV<br><br>
+                    상전이에서 ΔS = ΔH/T (등온 과정)이므로:
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td
+                style="background: rgb(255, 255, 255); padding: 24px; border: 3px solid rgb(192, 57, 43); text-align: center;">
+                <p
+                    style="font-size: 20px; color: rgb(192, 57, 43); margin-bottom: 8px; line-height: 1.8; font-weight: 700;">
+                    dP/dT = ΔH / (T ΔV)
+                </p>
+                <p style="font-size: 14px; color: rgb(122, 122, 122); margin-bottom: 0; line-height: 1.8;">
+                    클라우지우스-클라페이론 방정식 (Clausius-Clapeyron Equation)
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <p style="font-size: 13px; color: rgb(122, 122, 122); margin-bottom: 18px; line-height: 1.8;">
+        출처: Kondepudi, D. & Prigogine, I. (2014). Modern Thermodynamics, 2nd ed., Wiley. Chapter 6.
+    </p>
+
+    <!-- 물의 이상한 융해곡선 -->
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td style="background: rgb(249, 235, 234); padding: 22px 26px; border-left: 3px solid rgb(148, 49, 38);">
+                <p style="font-size: 15.5px; color: rgb(61, 61, 61); margin-bottom: 0; line-height: 1.8;">
+                    <span style="font-weight: 600;">생각해볼 질문 6</span><br>
+                    대부분의 물질은 압력을 높이면 녹는점이 <span style="font-weight: 600;">올라가</span>. 그런데 물은 압력을 높이면 녹는점이 <span
+                        style="color: rgb(192, 57, 43); font-weight: 600;">내려가</span>. 왜 그럴까?
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <!-- 힌트 및 설명 통합 박스 -->
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td style="background: rgb(255, 255, 255); padding: 22px 26px; border: 1px solid rgb(221, 221, 221);">
+                <p style="font-size: 15.5px; color: rgb(61, 61, 61); margin-bottom: 16px; line-height: 1.8;">
+                    <span style="font-weight: 600;">힌트:</span> 클라우지우스-클라페이론에서 dP/dT의 부호를 생각해봐.
+                </p>
+                <p style="font-size: 15px; color: rgb(77, 77, 77); margin-bottom: 8px; line-height: 1.8;">
+                    • 융해: ΔH &gt; 0 (항상 양수, 열 흡수)
+                </p>
+                <p style="font-size: 15px; color: rgb(77, 77, 77); margin-bottom: 8px; line-height: 1.8;">
+                    • 대부분 물질: V_liquid &gt; V_solid → ΔV &gt; 0 → dP/dT &gt; 0
+                </p>
+                <p style="font-size: 15px; color: rgb(77, 77, 77); margin-bottom: 16px; line-height: 1.8;">
+                    • <span style="color: rgb(192, 57, 43); font-weight: 600;">물</span>: V_liquid &lt; V_solid (얼음이 물에
+                    뜬다!) → ΔV &lt; 0 → <span style="font-weight: 600;">dP/dT &lt; 0</span>
+                </p>
+                <p
+                    style="font-size: 15.5px; color: rgb(61, 61, 61); margin-bottom: 12px; line-height: 1.8; border-top: 1px solid rgb(221, 221, 221); padding-top: 16px;">
+                    <span style="font-weight: 600;">이게 왜 중요해?</span>
+                </p>
+                <p style="font-size: 15px; color: rgb(77, 77, 77); margin-bottom: 8px; line-height: 1.8;">
+                    • 스케이트: 압력으로 얼음이 녹아 윤활 작용? (실제론 마찰열이 주 원인)
+                </p>
+                <p style="font-size: 15px; color: rgb(77, 77, 77); margin-bottom: 0; line-height: 1.8;">
+                    • 빙하: 바닥의 높은 압력에서 녹아 흐름
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <!-- 구분선 -->
+    <hr style="border: none; border-top: 1px solid rgb(204, 204, 204); margin: 56px 0;">
+
+    <!-- 2.4 초임계 유체 -->
+    <p
+        style="font-size: 21px; color: rgb(26, 26, 26); margin: 56px 0 20px 0; font-weight: 700; padding-bottom: 12px; border-bottom: 2px solid rgb(26, 26, 26);">
+        2.4 초임계 유체와 산업 응용
+    </p>
+
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td style="background: rgb(237, 236, 234); padding: 22px 26px; border-left: 3px solid rgb(122, 122, 122);">
+                <p style="font-size: 15.5px; color: rgb(61, 61, 61); margin-bottom: 0; line-height: 1.8;">
+                    <span style="font-weight: 600;">정의</span><br><br>
+                    <span style="color: rgb(26, 82, 118); font-weight: 600;">초임계 유체(Supercritical Fluid, SCF)</span>:
+                    임계점 이상의 온도와 압력에서 존재하는 물질. 액체와 기체의 경계가 없어 독특한 물성을 가져.
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        <span style="font-weight: 600;">초임계 CO₂ (sc-CO₂):</span>
+    </p>
+
+    <p style="font-size: 15px; margin-bottom: 10px; color: rgb(77, 77, 77); line-height: 1.8;">• 임계점: Tc = 31.1°C, Pc =
+        7.38 MPa</p>
+    <p style="font-size: 15px; margin-bottom: 6px; color: rgb(77, 77, 77); line-height: 1.8;">• <span
+            style="font-weight: 600;">장점</span>:</p>
+    <p style="font-size: 15px; margin-bottom: 6px; color: rgb(77, 77, 77); line-height: 1.8; padding-left: 20px;">- 낮은
+        임계온도 (열에 약한 물질 추출 가능)</p>
+    <p style="font-size: 15px; margin-bottom: 6px; color: rgb(77, 77, 77); line-height: 1.8; padding-left: 20px;">- 무독성,
+        비가연성, 잔류물 없음</p>
+    <p style="font-size: 15px; margin-bottom: 18px; color: rgb(77, 77, 77); line-height: 1.8; padding-left: 20px;">- 압력
+        조절로 용해도 조절 가능</p>
+
+    <!-- 산업 응용 테이블 -->
+    <div style="overflow-x: auto; margin: 24px 0;">
+        <table
+            style="width: 100%; border-collapse: collapse; font-size: 14px; min-width: 300px; background: rgb(255, 255, 255);">
+            <tr>
+                <th
+                    style="background: rgb(45, 45, 45); color: rgb(244, 208, 63); padding: 14px 12px; text-align: left; font-weight: 600; font-size: 13px;">
+                    분야</th>
+                <th
+                    style="background: rgb(45, 45, 45); color: rgb(244, 208, 63); padding: 14px 12px; text-align: left; font-weight: 600; font-size: 13px;">
+                    응용</th>
+            </tr>
+            <tr>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">식품
+                </td>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">카페인
+                    제거 커피</td>
+            </tr>
+            <tr>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">제약
+                </td>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">약물
+                    나노입자화</td>
+            </tr>
+            <tr>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">세정
+                </td>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">반도체
+                    웨이퍼 세정</td>
+            </tr>
+            <tr>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">추출
+                </td>
+                <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">홉
+                    추출, 향료 추출</td>
+            </tr>
+        </table>
+    </div>
+
+    <p style="font-size: 13px; color: rgb(122, 122, 122); margin-bottom: 18px; line-height: 1.8;">
+        출처: McHugh, M.A. & Krukonis, V.J. (1994). Supercritical Fluid Extraction, 2nd ed., Butterworth-Heinemann.
+    </p>
+
+    <!-- 이미지 삽입 - 커피 -->
+    <table style="width: 100%; border-collapse: collapse; margin: 36px 0;">
+        <tr>
+            <td style="padding: 0; text-align: center;">
+                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=680&q=80"
+                    alt="디카페인 커피 원두 - 초임계 CO2 추출" style="width: 100%; height: auto;">
+                <p
+                    style="font-size: 12px; color: rgb(153, 153, 153); margin-top: 10px; text-align: right; line-height: 1.8;">
+                    디카페인 커피의 비밀은 초임계 CO₂ | Unsplash
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <!-- 구분선 -->
+    <hr style="border: none; border-top: 1px solid rgb(204, 204, 204); margin: 56px 0;">
+
+    <!-- 마무리 질문 -->
+    <table style="width: 100%; border-collapse: collapse; margin: 32px 0;">
+        <tr>
+            <td style="background: rgb(45, 45, 45); color: rgb(232, 230, 227); padding: 28px;">
+                <p style="font-size: 14px; color: rgb(244, 208, 63); margin-bottom: 16px; letter-spacing: 1px;">마무리 질문
+                </p>
+                <p style="font-size: 16px; color: rgb(232, 230, 227); margin-bottom: 0; line-height: 1.8;">
+                    이번 단계에서 가장 "아하!" 했던 순간이 있었어? 어떤 개념이 가장 도전적이었고, 무엇이 가장 흥미로웠어?
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <!-- 참고문헌 박스 -->
+    <table style="width: 100%; border-collapse: collapse; margin: 40px 0;">
+        <tr>
+            <td
+                style="background: rgb(45, 45, 45); color: rgb(168, 168, 168); padding: 20px 24px; font-size: 12px; line-height: 1.9;">
+                <p style="color: rgb(232, 230, 227); font-size: 11px; margin-bottom: 12px; letter-spacing: 1px;">참고 문헌
+                </p>
+                <p style="margin-bottom: 0; line-height: 1.9;">
+                    • Callen, H.B. (1985). Thermodynamics and an Introduction to Thermostatistics, 2nd ed., Wiley.<br>
+                    • Atkins, P. & de Paula, J. (2014). Atkins' Physical Chemistry, 10th ed., Oxford.<br>
+                    • Zemansky, M.W. & Dittman, R.H. (1997). Heat and Thermodynamics, 7th ed., McGraw-Hill.<br>
+                    • Kondepudi, D. & Prigogine, I. (2014). Modern Thermodynamics, 2nd ed., Wiley.<br>
+                    • McHugh, M.A. & Krukonis, V.J. (1994). Supercritical Fluid Extraction, 2nd ed.,
+                    Butterworth-Heinemann.
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <p style="font-size: 13px; color: rgb(122, 122, 122); text-align: center; margin-top: 48px; line-height: 1.8;">
+        --- 열역학 3단계 완료 ---
+    </p>
+
+</body>
+
+</html>

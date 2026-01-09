@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>열역학 제2법칙 완전정복 - 왜 커피는 저절로 뜨거워지지 않을까?</title>
+</head>
+
+<body
+    style="background: rgb(249, 248, 246); color: rgb(45, 45, 45); line-height: 1.9; padding: 48px 24px; margin: 0 auto;">
+
+    <!-- 메타 정보 박스 -->
+    <table style="width: 100%; border-collapse: collapse; margin: 0 0 48px 0;">
+        <tr>
+            <td
+                style="background: rgb(45, 45, 45); color: rgb(232, 230, 227); padding: 20px 24px; font-size: 14px; line-height: 1.8;">
+                <span style="color: rgb(244, 208, 63); font-weight: 700;">읽는 시간</span>: 약 25분 |
+                <span style="color: rgb(244, 208, 63); font-weight: 700;">급할 때</span>: PART 2 동치성 증명 + PART 3 볼츠만 우선<br>
+                제1법칙만 알면 반쪽짜리다. 진짜 열역학을 <span style="color: rgb(244, 208, 63);">장악</span>하려면 제2법칙의 메커니즘을 이해해야 한다.
+            </td>
+        </tr>
+    </table>
+
+    <!-- 대제목 -->
+    <p style="font-size: 32px; color: rgb(26, 26, 26); font-weight: 800; margin-bottom: 8px; line-height: 1.8;">
+        열역학 제2법칙 완전정복
+    </p>
+    <p style="font-size: 14px; color: rgb(122, 122, 122); margin-bottom: 40px; line-height: 1.8;">
+        "왜 식은 커피가 저절로 다시 뜨거워지지 않을까?" — 이 질문에 세 가지 방식으로 답할 수 있게 되는 글
+    </p>
+
+    <!-- 인트로 -->
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        열역학 제1법칙은 알겠지. 에너지는 보존돼. 근데 이상하지 않아? 식은 커피가 주변 공기에서 열을 빨아들여 다시 뜨거워져도, 에너지 총합은 똑같잖아. 제1법칙은 위반되지 않거든.
+    </p>
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        그런데 왜 자연은 그걸 허용하지 않는 걸까? 이 질문에 답하려면 <span style="color: rgb(26, 82, 118); font-weight: 600;">제2법칙</span>이 필요해.
+        오늘은 이 메커니즘을 완전히 <span style="color: rgb(192, 57, 43); font-weight: 600;">설계도</span>처럼 펼쳐보려고 해. 단순히 공식을 외우는 게
+        아니라, 왜 그런 공식이 나올 수밖에 없는지를 납득하게 될 거야.
+    </p>
+
+    <!-- 핵심 질문 박스 -->
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td
+                style="background: rgb(254, 249, 231); color: rgb(61, 61, 61); padding: 20px 24px; font-size: 14px; line-height: 1.8; border-left: 3px solid rgb(212, 160, 23);">
+                <span style="font-weight: 700;">생각해볼 질문</span><br><br>
+                뜨거운 커피를 방에 두면 식는다. 그 열은 어디로 갔을까?<br>
+                그렇다면... 왜 식은 커피가 주변의 열을 흡수해서 "저절로" 다시 뜨거워지는 일은 없을까?<br><br>
+                <span style="color: rgb(122, 122, 122); font-size: 13px;">30초만 생각해봐. 답을 찾으려 하지 말고, "이상하다"는 느낌만 가져가면
+                    돼.</span>
+            </td>
+        </tr>
+    </table>
+
+    <!-- PART 1 시작 -->
+    <p
+        style="font-size: 13px; color: rgb(122, 122, 122); text-align: center; margin: 72px 0 16px 0; font-weight: 600; letter-spacing: 3px; line-height: 1.8;">
+        PART 1
+    </p>
+    <p
+        style="font-size: 26px; color: rgb(26, 26, 26); text-align: center; margin: 0 0 48px 0; font-weight: 800; line-height: 1.8;">
+        이론적 기초 — 제1법칙의 한계
+    </p>
+
+    <p
+        style="font-size: 21px; color: rgb(26, 26, 26); margin: 56px 0 20px 0; font-weight: 700; padding-bottom: 12px; border-bottom: 2px solid rgb(26, 26, 26); line-height: 1.8;">
+        제1법칙은 뭘 못 말해주는가?
+    </p>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        열역학 제1법칙을 수식으로 쓰면 이렇다: ΔU = Q - W. 내부에너지 변화는 들어온 열에서 한 일을 뺀 값이지. 에너지는 창조되지도, 소멸되지도 않는다. 마치 용돈 10,000원이 갑자기
+        20,000원이 되지 않는 것처럼.
+    </p>
+
+    <!-- 제1법칙 한계 박스 -->
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td
+                style="background: rgb(45, 45, 45); color: rgb(232, 230, 227); padding: 20px 24px; font-size: 14px; line-height: 1.8;">
+                <span style="color: rgb(244, 208, 63); font-weight: 700;">제1법칙의 한계</span><br><br>
+                ΔU = Q - W<br><br>
+                이 식은 "총량"만 말해준다. <span style="color: rgb(244, 208, 63);">방향은 말해주지 않는다.</span><br>
+                식은 커피가 다시 뜨거워져도 에너지 보존은 성립한다는 거지.
+            </td>
+        </tr>
+    </table>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        문제는 여기다. 제1법칙만으로는 <span style="color: rgb(192, 57, 43); font-weight: 600;">자연이 왜 특정 방향으로만 진행하는지</span> 설명이 안 된다.
+        깨진 컵이 저절로 붙지 않는 이유, 섞인 물감이 다시 분리되지 않는 이유. 이게 제2법칙이 필요한 근본적인 이유거든.
+    </p>
+
+    <!-- 역사적 맥락 -->
+    <p style="font-size: 17px; color: rgb(61, 61, 61); margin: 32px 0 14px 0; font-weight: 600; line-height: 1.8;">
+        역사적 맥락 — 카르노의 질문
+    </p>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        1824년, 프랑스의 사디 카르노가 물었다: "증기기관의 효율을 무한히 높일 수 있을까?" 당시 영국 증기기관이 프랑스보다 훨씬 앞서 있었거든. 카르노는 조국을 위해 이론적 한계가 있는지 연구했지.
+        28세의 청년이 열역학의 기초를 세운 거다.
+    </p>
+
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td
+                style="background: rgb(237, 236, 234); color: rgb(61, 61, 61); padding: 20px 24px; font-size: 14px; line-height: 1.8; border-left: 3px solid rgb(122, 122, 122);">
+                <span style="font-weight: 700;">카르노의 결론 (1824)</span><br><br>
+                "증기기관 효율에는 이론적 한계가 있다.<br>
+                그리고 그 한계는 <span style="color: rgb(26, 82, 118); font-weight: 600;">오직 온도에만</span> 의존한다."<br><br>
+                <span style="color: rgb(122, 122, 122); font-size: 13px;">출처: Carnot, S. (1824). Réflexions sur la
+                    puissance motrice du feu</span>
+            </td>
+        </tr>
+    </table>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        이게 열역학 제2법칙의 시작이야. 효율에 한계가 있다는 건, 다시 말해 "모든 열을 일로 바꿀 수 없다"는 뜻이지. 왜 그런지는 PART 2에서 본격적으로 파헤쳐보자.
+    </p>
+
+    <!-- PART 2 시작 -->
+    <p
+        style="font-size: 13px; color: rgb(122, 122, 122); text-align: center; margin: 72px 0 16px 0; font-weight: 600; letter-spacing: 3px; line-height: 1.8;">
+        PART 2
+    </p>
+    <p
+        style="font-size: 26px; color: rgb(26, 26, 26); text-align: center; margin: 0 0 48px 0; font-weight: 800; line-height: 1.8;">
+        두 표현과 동치성 증명
+    </p>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        제2법칙은 두 가지 다른 방식으로 표현돼. 처음엔 전혀 다른 말처럼 들리는데, 사실 논리적으로 완전히 같은 말이지. 이 '동치성'을 이해하는 게 제2법칙 장악의 핵심이야.
+    </p>
+
+    <p
+        style="font-size: 21px; color: rgb(26, 26, 26); margin: 56px 0 20px 0; font-weight: 700; padding-bottom: 12px; border-bottom: 2px solid rgb(26, 26, 26); line-height: 1.8;">
+        켈빈-플랑크 표현
+    </p>
+
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td
+                style="background: rgb(45, 45, 45); color: rgb(232, 230, 227); padding: 20px 24px; font-size: 14px; line-height: 1.8;">
+                <span style="color: rgb(244, 208, 63); font-weight: 700;">Kelvin-Planck Statement</span><br><br>
+                "단일 열원에서 열을 흡수하여 그것을 <span style="color: rgb(244, 208, 63);">전부</span> 일로 바꾸면서<br>
+                다른 변화 없이 작동하는 순환 기관은 존재하지 않는다."
+            </td>
+        </tr>
+    </table>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        쉽게 말하면 이렇다. 공짜로 일하는 기계는 없다. 뜨거운 곳에서 열을 가져와도, 일부는 <span
+            style="color: rgb(192, 57, 43); font-weight: 600;">반드시</span> 버려야 한다. 열기관은 고온 열원(T_H)에서 열 Q_H를 받아 일 W를 하고,
+        저온 열원(T_C)에 열 Q_C를 버리는 구조다. 핵심은 Q_C = 0인 기관, 즉 열을 100% 일로 바꾸는 기관이 불가능하다는 거지.
+    </p>
+
+    <!-- 열기관 다이어그램 박스 -->
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td
+                style="background: rgb(255, 255, 255); color: rgb(61, 61, 61); padding: 20px 24px; font-size: 13px; line-height: 2; border: 1px solid rgb(221, 221, 221);">
+                <span style="font-weight: 700;">열기관 구조</span><br><br>
+                고온 열원 (T_H)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;↓ Q_H (열 흡수)<br>
+                [ 열기관 ] → W (일 출력)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;↓ Q_C (열 방출, 반드시 > 0)<br>
+                저온 열원 (T_C)
+            </td>
+        </tr>
+    </table>
+
+    <p
+        style="font-size: 21px; color: rgb(26, 26, 26); margin: 56px 0 20px 0; font-weight: 700; padding-bottom: 12px; border-bottom: 2px solid rgb(26, 26, 26); line-height: 1.8;">
+        클라우지우스 표현
+    </p>
+
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td
+                style="background: rgb(237, 236, 234); color: rgb(61, 61, 61); padding: 20px 24px; font-size: 14px; line-height: 1.8; border-left: 3px solid rgb(122, 122, 122);">
+                <span style="font-weight: 700;">Clausius Statement</span><br><br>
+                "열은 저온 물체에서 고온 물체로 <span style="color: rgb(192, 57, 43); font-weight: 600;">저절로</span> 흐를 수 없다.<br>
+                외부에서 일을 해주어야만 가능하다."
+            </td>
+        </tr>
+    </table>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        냉장고 생각해봐. 전기(일)를 먹어야 차가운 곳에서 열을 빼서 뜨거운 곳(방)으로 보낼 수 있잖아. 전기 없이 저절로 그렇게 되면? 그건 클라우지우스 위반이지. 처음 질문으로 돌아가면, 식은 커피가
+        저절로 뜨거워지지 않는 이유가 바로 이거야.
+    </p>
+
+    <p
+        style="font-size: 21px; color: rgb(26, 26, 26); margin: 56px 0 20px 0; font-weight: 700; padding-bottom: 12px; border-bottom: 2px solid rgb(26, 26, 26); line-height: 1.8;">
+        두 표현은 같은 말이다 — 동치성 증명
+    </p>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        "모든 열을 일로 바꾸는 게 불가능하다"와 "열이 저절로 차가운 데서 뜨거운 데로 못 간다"가 같은 말이라고? 얼핏 들으면 전혀 다른 이야기 같은데. 이걸 증명하는 게 제2법칙 이해의 핵심이다.
+        귀류법을 써보자.
+    </p>
+
+    <!-- STEP 1 -->
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td
+                style="background: rgb(254, 249, 231); color: rgb(61, 61, 61); padding: 20px 24px; font-size: 14px; line-height: 1.8; border-left: 3px solid rgb(212, 160, 23);">
+                <span style="font-weight: 700;">STEP 1: 클라우지우스 위반 → 켈빈-플랑크 위반</span><br><br>
+                <strong>가정:</strong> 일 없이 저온→고온으로 열 Q를 옮기는 장치 X가 있다고 하자.<br>
+                이걸 정상적인 열기관 E와 결합시켜 본다.<br><br>
+                <strong>결과:</strong> E가 저온에 버린 열을 X가 다시 고온으로 올려주니까,<br>
+                순효과는 "단일 열원(고온)에서 열을 전부 일로 변환" → <span style="color: rgb(192, 57, 43); font-weight: 700;">켈빈-플랑크
+                    위반!</span>
+            </td>
+        </tr>
+    </table>
+
+    <!-- STEP 2 -->
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td
+                style="background: rgb(249, 235, 234); color: rgb(61, 61, 61); padding: 20px 24px; font-size: 14px; line-height: 1.8; border-left: 3px solid rgb(148, 49, 38);">
+                <span style="font-weight: 700;">STEP 2: 켈빈-플랑크 위반 → 클라우지우스 위반</span><br><br>
+                <strong>가정:</strong> 열 Q를 전부 일 W=Q로 바꾸는 장치 Y가 있다고 하자.<br>
+                이걸 정상적인 냉동기 R과 결합시켜 본다.<br><br>
+                <strong>결과:</strong> Y가 만든 일 W로 R이 저온에서 열을 뽑아 고온으로 보낸다.<br>
+                순효과는 "외부 일 없이 열이 저온→고온 이동" → <span style="color: rgb(192, 57, 43); font-weight: 700;">클라우지우스 위반!</span>
+            </td>
+        </tr>
+    </table>
+
+    <!-- 결론 박스 -->
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td
+                style="background: rgb(45, 45, 45); color: rgb(232, 230, 227); padding: 20px 24px; font-size: 14px; line-height: 1.8; text-align: center;">
+                <span style="color: rgb(244, 208, 63); font-weight: 700;">결론</span><br><br>
+                하나를 부정하면 다른 하나도 부정된다.<br>
+                두 표현은 <span style="color: rgb(244, 208, 63);">논리적으로 동치(equivalent)</span>다.
+            </td>
+        </tr>
+    </table>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        이 구조를 장악하면 제2법칙의 본질이 보이기 시작한다. 단언컨대, 이 동치성 증명을 이해하지 못하면 열역학 2장을 넘기기 어렵다. 두 표현이 같은 말이라는 걸 납득했다면, 이제 효율의 한계를 정량적으로
+        계산해보자.
+    </p>
+
+    <!-- 카르노 효율 -->
+    <p
+        style="font-size: 21px; color: rgb(26, 26, 26); margin: 56px 0 20px 0; font-weight: 700; padding-bottom: 12px; border-bottom: 2px solid rgb(26, 26, 26); line-height: 1.8;">
+        카르노 효율 — 이론적 한계
+    </p>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        카르노 사이클은 두 등온 과정과 두 단열 과정으로 이루어진 이상적인 가역 사이클이다. 이 사이클에서 유도되는 효율 공식이 바로 모든 열기관의 이론적 상한선이지.
+    </p>
+
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td
+                style="background: rgb(45, 45, 45); color: rgb(232, 230, 227); padding: 24px; font-size: 14px; line-height: 1.8; text-align: center;">
+                <span style="color: rgb(244, 208, 63); font-weight: 700; font-size: 20px;">η_Carnot = 1 - T_C /
+                    T_H</span><br><br>
+                <span style="color: rgb(168, 168, 168); font-size: 13px;">T는 반드시 절대온도(K)를 사용. 섭씨 아님!</span>
+            </td>
+        </tr>
+    </table>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        이 공식의 의미를 곱씹어보자. 효율이 100%가 되려면 T_C = 0K, 즉 절대영도가 되어야 한다. 하지만 절대영도 도달은 열역학 제3법칙에 의해 불가능하다. 결국 <span
+            style="color: rgb(192, 57, 43); font-weight: 600;">100% 효율의 열기관은 원리적으로 불가능</span>하다는 결론에 도달하지.
+    </p>
+
+    <!-- 예제 박스 -->
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td
+                style="background: rgb(255, 255, 255); color: rgb(61, 61, 61); padding: 20px 24px; font-size: 14px; line-height: 1.8; border: 2px solid rgb(45, 45, 45);">
+                <span style="font-weight: 700;">예제: 화력발전소</span><br><br>
+                고온 열원: 550°C = 823K<br>
+                저온 열원: 30°C = 303K<br><br>
+                η_Carnot = 1 - 303/823 = <span style="color: rgb(192, 57, 43); font-weight: 700;">약 63%</span><br><br>
+                실제 화력발전소 효율은 약 40%. 카르노 한계의 63%까지 가지 못하는 건 마찰, 열손실 등 비가역적 요소 때문이다.
+            </td>
+        </tr>
+    </table>
+
+    <!-- 엔트로피 -->
+    <p
+        style="font-size: 21px; color: rgb(26, 26, 26); margin: 56px 0 20px 0; font-weight: 700; padding-bottom: 12px; border-bottom: 2px solid rgb(26, 26, 26); line-height: 1.8;">
+        엔트로피 — 무질서의 척도?
+    </p>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        클라우지우스가 재밌는 걸 발견했어. 카르노 사이클에서 Q_H/T_H = Q_C/T_C인 거지. 이걸 정리하면 가역 순환 과정에서 ∮(dQ_rev/T) = 0이 되는데, 이건 어떤 상태함수가 존재한다는
+        뜻이지. 경로에 무관하게 시작점과 끝점만으로 결정되는 양, 그게 바로 엔트로피야.
+    </p>
+
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td
+                style="background: rgb(45, 45, 45); color: rgb(232, 230, 227); padding: 24px; font-size: 14px; line-height: 1.8; text-align: center;">
+                <span style="color: rgb(244, 208, 63); font-weight: 700; font-size: 20px;">dS = dQ_rev /
+                    T</span><br><br>
+                <span style="color: rgb(168, 168, 168); font-size: 13px;">엔트로피(S)는 상태함수. 단위는 J/K</span>
+            </td>
+        </tr>
+    </table>
+
+    <!-- 7세 비유 박스 -->
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td
+                style="background: rgb(237, 236, 234); color: rgb(61, 61, 61); padding: 20px 24px; font-size: 14px; line-height: 1.8; border-left: 3px solid rgb(122, 122, 122);">
+                <span style="font-weight: 700;">초등학생 눈높이</span><br><br>
+                "엔트로피는 '흩어진 정도'야. 방이 지저분해지는 건 쉽지만, 저절로 깨끗해지진 않잖아?"<br>
+                그게 바로 엔트로피 증가의 메커니즘이다.
+            </td>
+        </tr>
+    </table>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        그리고 고립계에서는 다음 법칙이 성립한다. 이게 제2법칙의 가장 보편적인 형태지.
+    </p>
+
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td
+                style="background: rgb(249, 235, 234); color: rgb(61, 61, 61); padding: 20px 24px; font-size: 14px; line-height: 1.8; border-left: 3px solid rgb(148, 49, 38);">
+                <span style="font-weight: 700;">엔트로피 증가 법칙</span><br><br>
+                ΔS_universe = ΔS_system + ΔS_surroundings ≥ 0<br><br>
+                등호: 가역 과정 (이상적, 현실에선 불가능)<br>
+                부등호: 비가역 과정 (현실의 모든 과정)
+            </td>
+        </tr>
+    </table>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        우주 전체의 '지저분함'은 절대 줄어들지 않는다. 방 하나를 청소하면, 청소기에서 열이 나오고, 몸에서 땀이 나고... 어딘가는 더 지저분해지거든. 국소적으로 질서를 만들 순 있지만, 전체적으로는
+        반드시 무질서가 증가한다. 이게 제2법칙의 가장 깊은 본질이다.
+    </p>
+
+    <!-- PART 3 시작 -->
+    <p
+        style="font-size: 13px; color: rgb(122, 122, 122); text-align: center; margin: 72px 0 16px 0; font-weight: 600; letter-spacing: 3px; line-height: 1.8;">
+        PART 3
+    </p>
+    <p
+        style="font-size: 26px; color: rgb(26, 26, 26); text-align: center; margin: 0 0 48px 0; font-weight: 800; line-height: 1.8;">
+        테크니컬 심화 — 통계역학으로 가는 길
+    </p>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        PART 2까지는 거시적(macroscopic) 관점이었다. 열, 일, 온도 같은 거시 변수만 다뤘지. 하지만 "왜 엔트로피는 증가하는가?"라는 질문에 근본적으로 답하려면,
+        미시적(microscopic) 관점이 필요하다. 분자 하나하나의 행동으로 내려가야 한다는 얘기다.
+    </p>
+
+    <p
+        style="font-size: 21px; color: rgb(26, 26, 26); margin: 56px 0 20px 0; font-weight: 700; padding-bottom: 12px; border-bottom: 2px solid rgb(26, 26, 26); line-height: 1.8;">
+        볼츠만 공식 — 엔트로피의 미시적 정의
+    </p>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        루트비히 볼츠만은 엔트로피를 확률로 설명했다. 그의 묘비에 새겨진 공식, 이게 바로 통계역학의 핵심이다.
+    </p>
+
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td
+                style="background: rgb(45, 45, 45); color: rgb(232, 230, 227); padding: 24px; font-size: 14px; line-height: 1.8; text-align: center;">
+                <span style="color: rgb(244, 208, 63); font-weight: 700; font-size: 20px;">S = k_B ln Ω</span><br><br>
+                <span style="color: rgb(168, 168, 168); font-size: 13px;">k_B: 볼츠만 상수 (1.38 × 10⁻²³ J/K)<br>Ω: 미시 상태의 수
+                    (multiplicity)</span>
+            </td>
+        </tr>
+    </table>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        여기서 핵심 개념 두 가지를 정리하자.
+    </p>
+
+    <table
+        style="width: 100%; border-collapse: collapse; font-size: 14px; background: rgb(255, 255, 255); margin: 24px 0;">
+        <tr>
+            <th
+                style="background: rgb(45, 45, 45); color: rgb(244, 208, 63); padding: 14px 12px; text-align: left; font-weight: 600; font-size: 13px;">
+                개념</th>
+            <th
+                style="background: rgb(45, 45, 45); color: rgb(244, 208, 63); padding: 14px 12px; text-align: left; font-weight: 600; font-size: 13px;">
+                정의</th>
+            <th
+                style="background: rgb(45, 45, 45); color: rgb(244, 208, 63); padding: 14px 12px; text-align: left; font-weight: 600; font-size: 13px;">
+                예시</th>
+        </tr>
+        <tr>
+            <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">미시
+                상태<br>(Microstate)</td>
+            <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">모든 입자의
+                위치와<br>운동량을 완전히 지정</td>
+            <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">분자 A는
+                왼쪽, B는 오른쪽,<br>C는 가운데...</td>
+        </tr>
+        <tr>
+            <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">거시
+                상태<br>(Macrostate)</td>
+            <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">온도, 압력,
+                부피 등<br>거시 변수로 기술</td>
+            <td style="padding: 14px 12px; border-bottom: 1px solid rgb(224, 223, 221); color: rgb(77, 77, 77);">300K,
+                1기압, 1L</td>
+        </tr>
+    </table>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        Ω는 특정 거시 상태에 대응하는 미시 상태의 개수다. 핵심 통찰은 이거지: <span style="color: rgb(26, 82, 118); font-weight: 600;">"무질서한" 거시 상태에
+            대응하는 Ω가 압도적으로 크다.</span>
+    </p>
+
+    <!-- 카드 비유 -->
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td
+                style="background: rgb(254, 249, 231); color: rgb(61, 61, 61); padding: 20px 24px; font-size: 14px; line-height: 1.8; border-left: 3px solid rgb(212, 160, 23);">
+                <span style="font-weight: 700;">카드 52장 비유</span><br><br>
+                카드 52장을 무작위로 섞는다고 해보자.<br><br>
+                "완벽히 정렬된 상태" (스페이드 A-K, 하트 A-K...): <span style="color: rgb(192, 57, 43); font-weight: 700;">딱
+                    1가지</span><br>
+                "그냥 뒤섞인 상태": <span style="color: rgb(26, 82, 118); font-weight: 700;">52! ≈ 8 × 10⁶⁷ 가지</span><br><br>
+                어느 쪽이 더 나올 확률이 높은지 자명하지? 엔트로피가 증가하는 방향으로 가는 건 그냥 <span style="font-weight: 600;">확률의 필연</span>이다.
+            </td>
+        </tr>
+    </table>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        이제 "왜 깨진 컵이 저절로 붙지 않는가?"에 답할 수 있다. 붙은 상태에 대응하는 미시 상태 수가 깨진 상태보다 압도적으로 적기 때문이다. 불가능한 게 아니라, 확률이 너무 낮아서 우주 나이만큼
+        기다려도 안 일어난다는 거지.
+    </p>
+
+    <p
+        style="font-size: 21px; color: rgb(26, 26, 26); margin: 56px 0 20px 0; font-weight: 700; padding-bottom: 12px; border-bottom: 2px solid rgb(26, 26, 26); line-height: 1.8;">
+        자유 팽창의 엔트로피 — 열 없이도 증가?
+    </p>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        이상기체가 진공 속으로 자유 팽창하는 경우를 생각해보자. 벽을 터뜨리면 기체가 퍼져나간다.
+    </p>
+
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td
+                style="background: rgb(237, 236, 234); color: rgb(61, 61, 61); padding: 20px 24px; font-size: 14px; line-height: 1.8; border-left: 3px solid rgb(122, 122, 122);">
+                <span style="font-weight: 700;">자유 팽창 조건</span><br><br>
+                Q = 0 (외부와 열 교환 없음 — 단열)<br>
+                W = 0 (진공을 밀어내는 일 없음)<br>
+                ΔU = 0 → ΔT = 0 (이상기체)
+            </td>
+        </tr>
+    </table>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        열 교환도 없고 온도 변화도 없는데, 엔트로피는 어떻게 될까? dS = dQ/T 공식을 그대로 적용하면 ΔS = 0인 것 같은데?
+    </p>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        여기서 중요한 트릭이 있다. <span style="color: rgb(192, 57, 43); font-weight: 600;">엔트로피는 상태함수</span>라서 경로에 무관하다. 실제 과정이
+        비가역(자유 팽창)이라도, 같은 시작점과 끝점을 연결하는 <span style="font-weight: 600;">가역 경로를 상상해서</span> 계산하면 된다.
+    </p>
+
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td
+                style="background: rgb(45, 45, 45); color: rgb(232, 230, 227); padding: 20px 24px; font-size: 14px; line-height: 1.8;">
+                <span style="color: rgb(244, 208, 63); font-weight: 700;">가역 등온팽창으로 계산</span><br><br>
+                ΔS = nR ln(V_f / V_i) > 0<br><br>
+                <span style="color: rgb(168, 168, 168);">V_f > V_i 이므로 ln(V_f/V_i) > 0, 따라서 엔트로피는 증가한다.</span>
+            </td>
+        </tr>
+    </table>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        결론: <span style="color: rgb(26, 82, 118); font-weight: 600;">열 출입이 없어도 엔트로피는 증가할 수 있다.</span> 볼츠만 관점에서 보면 당연하지.
+        기체가 더 넓은 공간을 차지하면 가능한 미시 상태 수 Ω가 폭발적으로 증가하니까.
+    </p>
+
+    <p
+        style="font-size: 21px; color: rgb(26, 26, 26); margin: 56px 0 20px 0; font-weight: 700; padding-bottom: 12px; border-bottom: 2px solid rgb(26, 26, 26); line-height: 1.8;">
+        맥스웰 관계식 — 심화
+    </p>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        열역학 퍼텐셜(내부에너지 U, 헬름홀츠 자유에너지 F, 깁스 자유에너지 G 등)의 이중 미분에서 유도되는 관계식들이 있다. 수학적 우아함의 정수라고 할 수 있지.
+    </p>
+
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td
+                style="background: rgb(255, 255, 255); color: rgb(61, 61, 61); padding: 20px 24px; font-size: 14px; line-height: 2; border: 1px solid rgb(221, 221, 221);">
+                <span style="font-weight: 700;">맥스웰 관계식 (Maxwell Relations)</span><br><br>
+                (∂T/∂V)_S = -(∂P/∂S)_V<br>
+                (∂T/∂P)_S = (∂V/∂S)_P<br>
+                (∂S/∂V)_T = (∂P/∂T)_V<br>
+                (∂S/∂P)_T = -(∂V/∂T)_P
+            </td>
+        </tr>
+    </table>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        이 관계들이 왜 중요하냐면, 실험적으로 측정하기 어려운 양(예: 엔트로피의 부피 의존성)을 측정 가능한 양(예: 압력의 온도 의존성)으로 변환할 수 있기 때문이다. 이론을 실험과 연결하는 다리 역할을
+        하지.
+    </p>
+
+    <!-- 마무리 -->
+    <p
+        style="font-size: 21px; color: rgb(26, 26, 26); margin: 56px 0 20px 0; font-weight: 700; padding-bottom: 12px; border-bottom: 2px solid rgb(26, 26, 26); line-height: 1.8;">
+        마치며
+    </p>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        여기까지 소화했다면 제2법칙의 핵심 메커니즘은 장악한 거다. 처음 질문으로 돌아가보자: "왜 식은 커피가 저절로 다시 뜨거워지지 않을까?"
+    </p>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        사실 이 질문은 단순해 보이지만, 물리학의 가장 근본적인 비대칭성을 건드린다. 시간은 왜 한 방향으로만 흐르는 것처럼 보이는가? 깨진 컵이 왜 저절로 붙지 않는가? 제2법칙은 이 모든 질문에 대한 답을
+        품고 있다.
+    </p>
+
+    <p style="font-size: 15.5px; margin-bottom: 18px; color: rgb(61, 61, 61); line-height: 1.8;">
+        엔트로피가 증가하는 방향, 그게 바로 우리가 '미래'라고 부르는 방향이다. 과거와 미래를 구분하는 건 뉴턴 역학이 아니라 열역학 제2법칙인 셈이지. 이걸 이해하면 물리학뿐 아니라 철학적으로도 상당히
+        깊은 통찰을 얻게 된다.
+    </p>
+
+    <!-- 마무리 요약 박스 -->
+    <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+        <tr>
+            <td
+                style="background: rgb(45, 45, 45); color: rgb(232, 230, 227); padding: 24px; font-size: 14px; line-height: 1.8;">
+                <span style="color: rgb(244, 208, 63); font-weight: 700;">세 가지 답변</span><br><br>
+                1. <strong>클라우지우스:</strong> 저온→고온 열 이동은 일 없이 불가능<br>
+                2. <strong>엔트로피:</strong> 그 과정은 우주 엔트로피를 감소시키므로 불가능<br>
+                3. <strong>볼츠만(확률):</strong> 분자들이 저절로 한쪽에 모일 확률은 압도적으로 낮다
+            </td>
+        </tr>
+    </table>
+
+    <p style="font-size: 14px; color: rgb(150, 150, 150); margin: 32px 0; text-align: center; line-height: 1.8;">
+        참고: Fermi - Thermodynamics, Schroeder - An Introduction to Thermal Physics, Kittel &amp; Kroemer - Thermal
+        Physics<br>
+        다음 편에서는 PART 4 (설계 과제: 실제 냉장고 분석)를 다룰 예정이다.
+    </p>
+
+</body>
+
+</html>

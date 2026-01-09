@@ -1,0 +1,376 @@
+
+
+---
+프롬 1
+
+이렇게. ㅇㅋ? 아래도 읽고 계획 세워서 실행해줘.
+
+Domain: writing
+
+You are going to translate 'input' into 'style'
+
+Guideline-must follow:
+
+initially render 'direction' for these all steps
+- invent 'writer persona'. think deeply so that you can write a two paragraph. summarize it to three sentence and print-out
+- invent 'reader persona' based on 'direction' and 'writer persona' . think deeply so that you can write a two paragraph. summarize it to three sentence and print-out
+- capitiously scrutinizing (for example, only one adverb is Phrase) render: (counts of Non-finite Clause or Predicative Modifier) / (counts of Phrase) > 3 . If the ratio is not satisfied,
+revise sentence structure by increasing clause embedding.
+- When translating, implement not only the referential meaning but also the lexical valence and arousal norms both referring to not the dictionary meaning but the Lexical benchmark of 'reference' as intended for 'reader persona'.
+- Based on 'writer persona' try to comunicate with 'reader persona'
+- Focus on producing a peak-performance output, regardless of the linguistic quality of <input>.
+- Adapt the format to be consistent with the target style.
+- The translation needs to carry the consistent pulse of a 'writer persona.' It’s about that delicate balance—mixing the definitive with the conversational, perhaps leaning a bit more toward one to let a true sense of originality breathe through the text.
+
+'style' {
+'direction': "AI가 사용되지 않은 것 같은 전문 블로거의 블로그 형식으로(네이버 블로그 느낌 하얀 바탕에 색깔 글씨 크기 디자인적으로 가독성적으로 모두 정해서 html version으로 출력 필수). 글은 완전히 이해시키기보다 한두개쯤은 알고 가길 바라는 마음으로. 이모지는 배제해줘. 60(본문+ 여백):30(제목/박스):10(강조) 맞췄는지도 확인해보고. 강조방법중 ‘이모지’는 빼줘. 한 사람이 쓴것같은 어체의 일관성은 나와야해. 예를들어 평문에서 ‘-다’ 와 ‘-요’ 섞어쓰되 한쪽을 조금 더 많이 써서 originality가 보여야겠지? —또 이미지도 구상한 톤에 맞게 넣어줘. html로 출력했을때 바로 보일 수 있도록. 해당 페르소나의 시선에서 처음부터 구축하듯이 만들어봐. 글을 쓸때의 해당 페르소나의 정신상태 까지도 고려해봐. 단순히 번역을 넘어 해당 페르소나의 언어로 바꿔봐바. Format 까지도. "
+'reference': "reckon - Across spoken, written, and academic usage, 'reckon' is a word that embodies the Korean meme 'a learned person' (배운 사람). Crucially, it manages to avoid any stale, old-fashioned vibe, offering instead a sharp, contemporary edge that feels entirely current rather than academically heavy."
+}
+
+input: 
+
+---
+
+프롬 2
+
+아래 프롬프트를 내부적으로 이해한후 기억하고 어떻게 이해했는지 말해봐. 그 다음 작업을 완료해. 프로젝트 파일/블로그용/번역전(열람용).txt 가 input 이고, 프로젝트 파일/블로그용/번역후(agent 수정).html이 너가 출력해야할 곳이야. 
+
+다 쓴 후에는 scrutiny 해야겠지? 
+
+이어서 작성해줘. 추가로이미지를 마크다운의 ![](링크) 와 같이 바로 출력될 수 있도록 있도록 html을 덧대줘. '코드블록'은 다른 방식으로 표현해줘. 추가로 점검하고 결과물에 무언가를 추가하는등 보완하면서 진행해줘. 특히 아래 기준과 처음 입력의 조건들을 제대로 이행했는지는 무조건 scrutiny의 대상이야. ***full code***를 보내줘. 추가로 읽는데 걸리는 시간이랑 급할때 꼭 읽어야 하는 부분은 처음 단락에 같이 적어줘. 그리고 아래 형식에 맞춰서 '디자인'도 수준급으로 진행해줘.
+
+이미지 Alt 태그 확인: * HTML 내에 이미지 태그를 넣으실 때 <img src="..." alt="신화 전설 민담 차이 비교표"> 처럼 alt 속성을 꼭 넣어주세요. 네이버 검색 엔진이 이미지를 이해하는 데 큰 도움이 됩니다.
+
+모바일 <-> pc 모두 호환되게 해줘. 또한 
+
+No CSS Block: <style> 태그를 절대 사용하지 말고, 모든 스타일은 태그 내 style="" 속성(인라인)으로만 작성할 것.
+
+No Classes: class나 id 속성을 사용하지 말 것. 오직 인라인 스타일로만 디자인할 것.
+
+Box to Table: 박스(Box) 디자인이 필요하면 div 대신 **1x1 표(table)**를 사용할 것. (네이버는 표 내부의 배경색과 테두리를 가장 잘 보존함)
+
+RGB Colors: 색상 값은 가능한 rgb(0, 0, 0) 형식으로 표현할 것.
+
+Line Height: 가독성을 위해 모든 <p> 태그에 line-height: 1.8;을 명시할 것.
+
+즉, 네이버 블로그용 인라인 스타일(Inline Style)로 변환해줘.
+
+포괄적 디자인 서식:
+'''
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>여기에 제목</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+      background: #f9f8f6;
+      color: #2d2d2d;
+      line-height: 1.9;
+      padding: 48px 24px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 32px;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+    .subtitle {
+      font-size: 14px;
+      color: #7a7a7a;
+      margin-bottom: 20px;
+    }
+    .meta-info {
+      background: #2d2d2d;
+      color: #e8e6e3;
+      padding: 20px 24px;
+      border-radius: 6px;
+      margin-bottom: 48px;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    .meta-info strong {
+      color: #f4d03f;
+    }
+    .meta-info .time {
+      color: #a8a8a8;
+      font-size: 13px;
+    }
+    h2 {
+      font-size: 21px;
+      color: #1a1a1a;
+      margin: 56px 0 20px 0;
+      font-weight: 700;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #1a1a1a;
+    }
+    h3 {
+      font-size: 17px;
+      color: #3d3d3d;
+      margin: 32px 0 14px 0;
+      font-weight: 600;
+    }
+    p {
+      font-size: 15.5px;
+      margin-bottom: 18px;
+      color: #3d3d3d;
+    }
+    .highlight {
+      color: #c0392b;
+      font-weight: 600;
+    }
+    .keyword {
+      color: #1a5276;
+      font-weight: 600;
+    }
+    .box-dark {
+      background: #2d2d2d;
+      color: #e8e6e3;
+      border-radius: 6px;
+      padding: 24px 28px;
+      margin: 26px 0;
+    }
+    .box-dark strong {
+      color: #f4d03f;
+      font-size: 16px;
+    }
+    .box-subtle {
+      background: #edecea;
+      border-radius: 6px;
+      padding: 22px 26px;
+      margin: 24px 0;
+      border-left: 3px solid #7a7a7a;
+    }
+    .box-accent {
+      background: #fef9e7;
+      border-radius: 6px;
+      padding: 22px 26px;
+      margin: 24px 0;
+      border-left: 3px solid #d4a017;
+    }
+    .box-warn {
+      background: #f9ebea;
+      border-radius: 6px;
+      padding: 22px 26px;
+      margin: 24px 0;
+      border-left: 3px solid #943126;
+    }
+    .quote {
+      color: #5d5d5d;
+      padding: 16px 20px;
+      background: #f0efed;
+      border-left: 3px solid #2d2d2d;
+      margin: 22px 0;
+      font-size: 15px;
+    }
+    .table-wrap {
+      overflow-x: auto;
+      margin: 24px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      min-width: 400px;
+      background: #fff;
+    }
+    th {
+      background: #2d2d2d;
+      color: #f4d03f;
+      padding: 14px 12px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    td {
+      padding: 14px 12px;
+      border-bottom: 1px solid #e0dfdd;
+      color: #4d4d4d;
+    }
+    tr:hover td {
+      background: #f9f8f6;
+    }
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, #ccc, transparent);
+      margin: 56px 0;
+    }
+    .structure-box {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 22px 26px;
+      font-size: 14.5px;
+      line-height: 2;
+      margin: 22px 0;
+      color: #3d3d3d;
+    }
+    .structure-box .label {
+      display: inline-block;
+      background: #2d2d2d;
+      color: #f4d03f;
+      padding: 2px 8px;
+      border-radius: 3px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-right: 8px;
+    }
+    .structure-box .arrow {
+      display: block;
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px dashed #ccc;
+      color: #943126;
+      font-weight: 500;
+    }
+    .small-text {
+      font-size: 13px;
+      color: #7a7a7a;
+    }
+    .section-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #2d2d2d;
+      color: #f4d03f;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 14px;
+      font-weight: 700;
+      margin-right: 12px;
+    }
+    ul, ol {
+      margin: 18px 0 18px 20px;
+      color: #4d4d4d;
+    }
+    li {
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+    .template-box {
+      background: #fff;
+      border: 2px solid #2d2d2d;
+      border-radius: 6px;
+      padding: 20px 24px;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .template-box strong {
+      display: block;
+      color: #1a1a1a;
+      margin-bottom: 12px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .part-title {
+      font-size: 13px;
+      color: #7a7a7a;
+      text-align: center;
+      margin: 72px 0 16px 0;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    .part-name {
+      font-size: 26px;
+      color: #1a1a1a;
+      text-align: center;
+      margin: 0 0 48px 0;
+      font-weight: 800;
+    }
+    .ref-box {
+      background: #2d2d2d;
+      color: #a8a8a8;
+      border-radius: 6px;
+      padding: 20px 24px;
+      margin: 40px 0;
+      font-size: 12px;
+      line-height: 1.9;
+    }
+    .ref-box strong {
+      color: #e8e6e3;
+      display: block;
+      margin-bottom: 12px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .img-wrap {
+      margin: 36px 0;
+    }
+    .img-wrap img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      filter: grayscale(15%) contrast(1.05);
+    }
+    .img-caption {
+      font-size: 12px;
+      color: #999;
+      margin-top: 10px;
+      text-align: right;
+    }
+    .logic-example {
+      background: #fff;
+      border-left: 3px solid #1a5276;
+      padding: 18px 22px;
+      margin: 22px 0;
+      font-size: 14.5px;
+      line-height: 2;
+    }
+    .logic-example .premise {
+      color: #4d4d4d;
+    }
+    .logic-example .conclusion {
+      color: #1a5276;
+      font-weight: 600;
+      border-top: 1px dashed #ccc;
+      padding-top: 12px;
+      margin-top: 12px;
+    }
+    .summary-card {
+      background: #2d2d2d;
+      color: #e8e6e3;
+      border-radius: 6px;
+      padding: 28px;
+      margin: 32px 0;
+    }
+    .summary-card h4 {
+      color: #f4d03f;
+      font-size: 14px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .summary-card p {
+      color: #e8e6e3;
+      font-size: 16px;
+      margin-bottom: 0;
+    }
+    .tag {
+      display: inline-block;
+      background: #1a5276;
+      color: #fff;
+      padding: 3px 10px;
+      border-radius: 3px;
+      font-size: 12px;
+      font-weight: 500;
+      margin-right: 6px;
+    }
+    .tag-warn {
+      background: #943126;
+    }
+  </style>
+</head>
+<body>
+
+'''
